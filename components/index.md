@@ -72,7 +72,7 @@
  
 - **StatefulSet**. The same as Deployment, but for **StateFUL** apps
   - Abstraction on top of pods
-  - For **StateFUL** apps. Apps like DB has a state - its data via volume. The pods of the DB share the same data storage and this requres sync between pods who write/reads data to avoid data inconsistency.
+  - For **StateFUL** apps. Apps like DB has a state - its data via volume. The pods of the DB share the same data storage and this requres sync between pods who write/reads data to avoid data inconsistency. https://github.com/VIK2395/JWT_auth/blob/main/jwt/jwt.vs.session.md
   - Sets number of pod replicas
   - Deplying to StatefulSet is **NOT easy**. This is why it common practice to host DB apps outside of the k8s cluster
 
