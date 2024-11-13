@@ -1,0 +1,1 @@
+- **Node**. Virtual or physical machine
