@@ -64,6 +64,18 @@
     - Storage on local machine (Node)
     - Remote storage outside k8s cluster (cloud storage or on-promises storage)
 
+- **Deploment**. A bluprint for pods
+  - Abstraction on top of pods
+  - For **StateLESS** apps
+  - Sets number of pod replicas
+  - In practice, we don't work with Pods(though we can), but with deployments as it is more convenient way to deal with Pods.
+ 
+- **StatefulSet**. The same as Deployment, but for **StateFUL** apps
+  - Abstraction on top of pods
+  - For **StateFUL** apps. Apps like DB has a state - its data via volume. The pods of the DB share the same data storage and this requres sync between pods who write/reads data to avoid data inconsistency.
+  - Sets number of pod replicas
+  - Deplying to StatefulSet is **NOT easy**. This is why it common practice to host DB apps outside of the k8s cluster
+
 ## Replication
 
 In Kubernetes, **nodes do not have replicas** in the same way that Pods or Deployments do. The concept of **replicas** applies primarily to **Pods** or other resources that run workloads, not to nodes themselves.
