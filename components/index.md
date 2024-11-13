@@ -5,7 +5,7 @@
   - Master Node (Control Plane). While technically a node, it is responsible for orchestrating and managing the worker nodes and the workloads running on them.
   - Worker Node is where Pods (and the containers inside them) actually run. Worker nodes are managed by the control plane (master node) and execute the workloads.
 
-- **Pod**. Smallest unit in Kubernetes. **Abstration** over container.
+- **Pod**. Smallest unit in Kubernetes. [**Abstration** over/of container].
   - Layer on top of the container.
   - Allows to replace the containers themselves inside pods.
   - You interact with the Kubernetes layer, not directly with container technologies.
@@ -14,7 +14,7 @@
   - Pods are **ephemeral(the term comes from the Greek word ephemeros, which means "lasting only a day.")**, which means they can die very easily. In general, something ephemeral is designed to be temporary, only existing for as long as it's needed, and then discarded.
       - For, example when a container/application crashes, the pod will die and a new pod will be created in its place. **New IP will be assigned on re-creation**
 
-- **Service**. **Wrapper or abstraction layer** over a **group of the same Pods**
+- **Service**. **Wrapper or abstraction layer** over a **group of the same Pods** [Communucation between services/pods]
   - A service has **static/permanent IP and DNS**
   - Lifecycle of Pod and Service are **NOT connected**. So pods can be re-created, but the service still persists.
   - **Load Balancing**. The Service balances traffic across the group of Pods it represents, ensuring that requests are distributed evenly.
@@ -27,13 +27,13 @@
     - External can be accessed from external sources (http://<**node-ip**>:<**node-port-that-maps-on-service-port**>)
     - Internal is NOT accessible/visible for external sources
 
-- **Ingress** (Cluster gateway?)
+- **Ingress** (Cluster gateway?) [Route traffic to into cluster]
   - Provides HTTP and HTTPS access to services within a cluster, acting as an entry point for external traffic to reach internal Services.
   - Allows you to define rules for routing requests based on hostnames, paths, and ports.
   - Supports SSL/TLS enabling secure HTTPS connections
   - **Ingress Controller**. An application responsible for implementing Ingress rules, usually deployed as a Pod in the cluster. Popular Ingress Controllers include **NGINX**, Traefik, HAProxy, and cloud provider-specific controllers.
 
-- **ConfigMap**. External configuration of your application connected to a Pod/Deployment(so pod gets the data). An API object used to store **non-confidential** data in key-value pairs. Pods can consume ConfigMaps as environment variables, command-line arguments, or as configuration files in a volume. https://kubernetes.io/docs/concepts/configuration/configmap/
+- **ConfigMap**. [External configuration] of your application connected to a Pod/Deployment(so pod gets the data). An API object used to store **non-confidential** data in key-value pairs. Pods can consume ConfigMaps as environment variables, command-line arguments, or as configuration files in a volume. https://kubernetes.io/docs/concepts/configuration/configmap/
   - Some env vars can be **hardcoded to container IMANGE**. Example below.
     ```Dockerfile
     # Start with a base image
@@ -54,27 +54,31 @@
     To make `DATABASE_URL` configurable, we can remove it from image and set the env var when starting a pod/container(simalar to docker compose).
     **This allows to avoid unnecessary image rebuilds**.
 
-- **Secret**. Just like ConfigMap, but to store secret data(like user name and password)
+- **Secret**. [External configuration]. Just like ConfigMap, but to store secret data(like user name and password)
   - Data is stored in base64 encoded format.
   - Connected to a Pod/Deployment.
 
-- **Volume**
+- **Volume** [Data persistance]
   - Kubernetes cluster doesn't manage data persistance
   - Attaches physical storage to a Pod
     - Storage on local machine (Node)
     - Remote storage outside k8s cluster (cloud storage or on-promises storage)
 
-- **Deploment**. A bluprint for pods. A Deployment is a higher-level abstraction that builds on top of **ReplicaSet**.
+- **Deploment**. [Replication]. A bluprint for pods. A Deployment is a higher-level abstraction that builds on top of **ReplicaSet**.
   - Abstraction on top of pods
   - For **StateLESS** apps
   - Sets number of pod replicas
   - In practice, we don't work with Pods(though we can), but with deployments as it is more convenient way to deal with Pods.
  
-- **StatefulSet**. The same as Deployment, but for **StateFUL** apps
+- **StatefulSet**. [Replication]. The same as Deployment, but for **StateFUL** apps
   - Abstraction on top of pods
   - For **StateFUL** apps. Apps like DB has a state - its data via volume. The pods of the DB share the same data storage and this requres sync between pods who write/reads data to avoid data inconsistency. https://github.com/VIK2395/JWT_auth/blob/main/jwt/jwt.vs.session.md
   - Sets number of pod replicas
   - Deplying to StatefulSet is **NOT easy**. This is why it common practice to host DB apps outside of the k8s cluster
+
+- **DeamonSet**. [Replication]
+  - A term `daemon` means a background process that runs continuously and provides essential services or performs tasks without user intervention.
+  - Type of controller that ensures a specific Pod runs on **all NODEs** (or a subset of nodes) in a cluster. DaemonSets are typically used for tasks that need to be performed on every node, such as running log collectors, monitoring agents, or network plugins.
 
 ## Replication
 
