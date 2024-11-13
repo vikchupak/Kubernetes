@@ -79,6 +79,14 @@
 - **DeamonSet**. [Replication]
   - A term `daemon` means a background process that runs continuously and provides essential services or performs tasks without user intervention.
   - Type of controller that ensures a specific Pod runs on **all NODEs** (or a subset of nodes) in a cluster. DaemonSets are typically used for tasks that need to be performed on every node, such as running log collectors, monitoring agents, or network plugins.
+  - Key Characteristics
+      - **One Pod per Node**. Ensures that a single Pod runs on every node in the cluster (or only specific nodes if specified by selectors or node affinity).
+      - **Automatic Scaling**. As nodes are added or removed from the cluster, the DaemonSet automatically adds or removes Pods to ensure the correct number of Pods are running.
+      - **Used for Node-Specific Daemon Jobs**. DaemonSets are useful when you need to deploy system-level services (e.g., monitoring, logging, networking) that require a Pod to run on every node.
+  - Use Cases
+    - **Logging**
+    - **Monitoring**
+    - **Network Plugins**
 
 ## Replication
 
