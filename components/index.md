@@ -28,7 +28,7 @@
   - Supports SSL/TLS enabling secure HTTPS connections
   - **Ingress Controller**. An application responsible for implementing Ingress rules, usually deployed as a Pod in the cluster. Popular Ingress Controllers include **NGINX**, Traefik, HAProxy, and cloud provider-specific controllers.
 
-- **ConfigMap**. An API object used to store **non-confidential** data in key-value pairs. Pods can consume ConfigMaps as environment variables, command-line arguments, or as configuration files in a volume. https://kubernetes.io/docs/concepts/configuration/configmap/
+- **ConfigMap**. External configuration of your application connected to a Pod/Deployment(so pod gets the data). An API object used to store **non-confidential** data in key-value pairs. Pods can consume ConfigMaps as environment variables, command-line arguments, or as configuration files in a volume. https://kubernetes.io/docs/concepts/configuration/configmap/
   - Some env vars can be **hardcoded to container IMANGE**. Example below.
     ```Dockerfile
     # Start with a base image
@@ -48,3 +48,7 @@
     ```
     To make `DATABASE_URL` configurable, we can remove it from image and set the env var when starting a pod/container(simalar to docker compose).
     **This allows to avoid unnecessary image rebuilds**.
+
+- **Secret**. Just like ConfigMap, but to store secret data(like user name and password)
+  - Data is stored in base64 encoded format.
+  - Connected to a Pod/Deployment.
