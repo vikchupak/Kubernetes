@@ -3,7 +3,19 @@
 
 - **Node**. Virtual or physical machine
   - Master Node (Control Plane). While technically a node, it is responsible for orchestrating and managing the worker nodes and the workloads running on them.
+    - Each node must have 4 processes
+      - `API server` - like a cluster gateway/entry point. We interact with the server via a client(UI, CLI, API). Makes a request to `Sheduler`.
+        - Has auth chek for only authorized users to make cluster changes
+      - `Sheduler` - decides and schedules to which node to add new pod(makes a request to corresponding node `kubelet`) or so.
+      - `Controller Manager` - detects cluster state changes(makes a request to `Sheduler`)
+      - `etcd` - key-value store of the cluster state. `Sheduler`, `Controller Manager`, `API server` rely on the data in `etcd`
   - Worker Node is where Pods (and the containers inside them) actually run. Worker nodes are managed by the control plane (master node) and execute the workloads.
+    - Each node must have 3 processes to manage pods
+      - Container runtime like `docker containerd` or other - runs containers
+      - `kubelet` - kubernetes process that has interface with the container runtime and the node machine. Takes the configuration and starts the pod with a container inside assigning resouses from the node to the container
+      - `kube proxy` - forwards request from services to pods in an "inteligent" and efficient way
+    
+  ***Note: In case we have multiple Master Nodes, `API servers` are load-balensed and `etcd` forms distibuted storage across all master nodes.***
 
 - **Pod**. Smallest unit in Kubernetes. [**Abstration** over/of container].
   - Layer on top of the container.
