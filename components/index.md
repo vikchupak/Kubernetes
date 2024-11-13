@@ -4,8 +4,8 @@
 - **Node**. Virtual or physical machine
   - Master Node (Control Plane). While technically a node, it is responsible for orchestrating and managing the worker nodes and the workloads running on them.
     - Each node must have 4 processes
-      - `API server` - like a cluster gateway/entry point. We interact with the server via a client(UI, CLI, API). Makes a request to `Sheduler`.
-        - Has auth chek for only authorized users to make cluster changes
+      - `API server` - like a cluster entry point. We interact with the server via a client(UI, CLI, API). Makes a request to `Sheduler`.
+        - Has auth chek for only authorized users to make cluster changes.
       - `Sheduler` - decides and schedules to which node to add new pod(makes a request to corresponding node `kubelet`) or so.
       - `Controller Manager` - detects cluster state changes(makes a request to `Sheduler`)
       - `etcd` - key-value store of the cluster state. `Sheduler`, `Controller Manager`, `API server` rely on the data in `etcd`
