@@ -23,3 +23,7 @@
     - Internal is NOT accessible/visible for external sources
 
 - **Ingress**
+  - Provides HTTP and HTTPS access to services within a cluster, acting as an entry point for external traffic to reach internal Services.
+  - Allows you to define rules for routing requests based on hostnames, paths, and ports.
+  - Supports SSL/TLS enabling secure HTTPS connections
+  - **Ingress Controller**. An application responsible for implementing Ingress rules, usually deployed as a Pod in the cluster. Popular Ingress Controllers include **NGINX**, Traefik, HAProxy, and cloud provider-specific controllers.
