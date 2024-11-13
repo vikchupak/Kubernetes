@@ -1,4 +1,9 @@
+- **Cluster**. Is a set of nodes (physical or virtual machines) that work together to run containerized applications in a distributed and scalable manner.
+  - The cluster is the highest level of abstraction in Kubernetes and provides the environment for deploying, managing, and scaling applications.
+
 - **Node**. Virtual or physical machine
+  - Master Node (Control Plane). While technically a node, it is responsible for orchestrating and managing the worker nodes and the workloads running on them.
+  - Worker Node is where Pods (and the containers inside them) actually run. Worker nodes are managed by the control plane (master node) and execute the workloads.
 
 - **Pod**. Smallest unit in Kubernetes. **Abstration** over container.
   - Layer on top of the container.
@@ -22,7 +27,7 @@
     - External can be accessed from external sources (http://<**node-ip**>:<**node-port-that-maps-on-service-port**>)
     - Internal is NOT accessible/visible for external sources
 
-- **Ingress**
+- **Ingress** (Cluster gateway?)
   - Provides HTTP and HTTPS access to services within a cluster, acting as an entry point for external traffic to reach internal Services.
   - Allows you to define rules for routing requests based on hostnames, paths, and ports.
   - Supports SSL/TLS enabling secure HTTPS connections
@@ -52,3 +57,10 @@
 - **Secret**. Just like ConfigMap, but to store secret data(like user name and password)
   - Data is stored in base64 encoded format.
   - Connected to a Pod/Deployment.
+
+- **Volume**
+  - Kubernetes cluster doesn't manage data persistance
+  - Attaches physical storage to a Pod
+    - Storage on local machine (Node)
+    - Remote storage outside k8s cluster (cloud storage or on-promises storage)
+
