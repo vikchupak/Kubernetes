@@ -27,3 +27,24 @@
   - Allows you to define rules for routing requests based on hostnames, paths, and ports.
   - Supports SSL/TLS enabling secure HTTPS connections
   - **Ingress Controller**. An application responsible for implementing Ingress rules, usually deployed as a Pod in the cluster. Popular Ingress Controllers include **NGINX**, Traefik, HAProxy, and cloud provider-specific controllers.
+
+- **ConfigMap**. An API object used to store non-confidential data in key-value pairs. Pods can consume ConfigMaps as environment variables, command-line arguments, or as configuration files in a volume. https://kubernetes.io/docs/concepts/configuration/configmap/
+  - Some env vars can be **hardcoded to container IMANGE**. Example below.
+    ```Dockerfile
+    # Start with a base image
+    FROM python:3.8
+    
+    # Set environment variable for the database URL (baked into the image)
+    ENV DATABASE_URL="mysql://db.example.com:3306/mydb"
+    
+    # Copy the application code into the container
+    COPY app.py /app/app.py
+    
+    # Set the working directory
+    WORKDIR /app
+    
+    # Run the application(the app uses DATABASE_URL to connect to database)
+    CMD ["python", "app.py"]
+    ```
+    To make `DATABASE_URL` configurable, we can remove it from image and set the env var when starting a pod/container(simalar to docker compose).
+    **This allows to avoid unnecessary image rebuilds**.
