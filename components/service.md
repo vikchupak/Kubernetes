@@ -22,8 +22,7 @@
   spec:
     selector:
       app: mongo-express
-    # This makes the service external, NOT the best type name
-    type: LoadBalancer
+    type: LoadBalancer # This makes the service external, NOT the best type name
     ports:
       - protocol: TCP
       port: 8081 # container/pod port
