@@ -1,7 +1,7 @@
 Kubectl - Kubernetes command line tool for communicating with a Kubernetes cluster's control plane, using the Kubernetes API.
 
 ```bash
-kubectl get nodes|pod|service|replicaSet|deployment [-o wide]
+kubectl get all|nodes|pod|service|replicaSet|deployment [-o wide]
 # -o wide - for more detailed info
 ```
 ![image](https://github.com/user-attachments/assets/6c3d26d8-2152-4023-83bc-f3aa179de3e2)
