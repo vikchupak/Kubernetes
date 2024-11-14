@@ -1,3 +1,5 @@
+## Advantages
+
 - Way to organise resources
   - Better overview
   - Grouping resourses. Example:
@@ -10,7 +12,7 @@
   - Restrict access to namespaces for different teams. Limit resources(CPU, RAM, Storage) per namespace.
 - Like virtual cluster inside a cluster
 
-Limitations
+## Limitations
 - We cannot access most resources from another namespace
 - BUT we can access service in another namespace like `service-name.namespace-name`
 - Components that cannot be created within a namespace: Volume, Node. Command `kubectl api-resources --namespaced=false|true`
@@ -34,3 +36,15 @@ Create namespace
 ```bash
 kubectl create namespace <namespaceName>
 ```
+
+# Get components within namespace
+
+```bash
+kubectl get configmap [-n <namespaceName>]
+# -n <namespaceName> - optional for default namespace
+```
+Crete components inside a namespace. First way.
+```bash
+kubectl apply -f <configFile> --namespace=<spaceName>
+```
+
