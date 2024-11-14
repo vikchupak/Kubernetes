@@ -20,11 +20,12 @@ kubectl edit deployment <deploymentName>
 kubectl delete deployment <deploymentName>
 ```
 ```bash
-# Crete or edit deployment via deployment file (yaml)
+# Crete or edit a component via deployment file (yaml)
+# In the file, kind attribute used as component type
 kubectl apply -f <fileName>
 ```
 ```bash
-# Delete deployment via deployment file (yaml)
+# Delete a component via deployment file (yaml)
 kubectl delete -f <fileName>
 ```
 ## Debugging pods
