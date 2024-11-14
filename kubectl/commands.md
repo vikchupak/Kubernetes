@@ -1,18 +1,42 @@
 Kubectl - Kubernetes command line tool for communicating with a Kubernetes cluster's control plane, using the Kubernetes API.
 
 ```bash
-kubectl get nodes
-```
-```bash
-kubectl get pod
-```
-```bash
-kubectl get services
+kubectl get nodes|pod|services|replicaSet|deployment
 ```
 ```bash
 # THERE ARE NO SUCH COMMAND [with pod] because usually we do not create pods directly
 kubectl create pod
 ```
 ```bash
-kubectl create deployment
+# Create deployment via terminal
+kubectl create deployment nginx-depl --image=nginx [options]
+```
+```bash
+kubectl edit deployment <deploymentName>
+# Opens deployment file for editing
+```
+```bash
+# Delete deployment via terminal
+kubectl delete deployment <deploymentName>
+```
+```bash
+# Crete or edit deployment via deployment file (yaml)
+kubectl apply -f <fileName>
+```
+```bash
+# Delete deployment via deployment file (yaml)
+kubectl delete -f <fileName>
+```
+## Debugging pods
+```bash
+# Logs inside pod
+kubectl logs <podName>
+```
+```bash
+# Detailed info on pod
+kubectl describe pod <podName>
+```
+```bash
+# Open pod interactive terminal
+kubectl exec -it <podName> -- bin/bash
 ```
