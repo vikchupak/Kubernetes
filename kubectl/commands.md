@@ -3,6 +3,8 @@ Kubectl - Kubernetes command line tool for communicating with a Kubernetes clust
 ```bash
 kubectl get nodes|pod|services|replicaSet|deployment
 ```
+![image](https://github.com/user-attachments/assets/6c3d26d8-2152-4023-83bc-f3aa179de3e2)
+- kubernetes is a default service. Always in the system.
 ```bash
 # THERE ARE NO SUCH COMMAND [with pod] because usually we do not create pods directly
 kubectl create pod
