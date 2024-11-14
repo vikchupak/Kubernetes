@@ -27,3 +27,7 @@ Labels(key-value pairs) and selectors(key-value pairs) are used to establish con
 ## Connecting Deployment and Pods to Services
 
 <img width="727" alt="30" src="https://github.com/user-attachments/assets/ec6dfab1-2008-4294-95ae-fcc1868cc30d">
+
+## Map Pod ports to Service ports
+
+<img width="812" alt="31" src="https://github.com/user-attachments/assets/69869816-c2a9-4b93-9e4a-75d5b8977254">
