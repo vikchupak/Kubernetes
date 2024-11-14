@@ -7,12 +7,14 @@
   spec:
     selector:
       app: mongodb
-    # type: ClusterIP # implicit default type
+    # type: ClusterIP
     ports:
       - protocol: TCP
       port: 27017
       targertPort: 27017
   ```
+  - ClusterIP is an implicit default type
+  - ClusterIP exposes the service on a cluster-internal IP
 - External service
   ```yaml
   apiVersion: v1
