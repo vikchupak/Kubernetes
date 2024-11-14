@@ -8,3 +8,7 @@ Each config file has 3 parts:
   - Status data gets from `etcd`
 
 ## Labels && selectors
+
+Labels and selectors are used to establish connection between components.
+
+- metadata part contains labels used for a component
