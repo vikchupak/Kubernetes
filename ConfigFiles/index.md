@@ -18,16 +18,16 @@ Labels(key-value pairs) and selectors(key-value pairs) are used to establish con
 
 ***Note: pods get labels through `template` section.***
 
-## Connecting Pods to Deployment
+### Connecting Pods to Deployment
 
 - via `selectors in a deployment` and `matched labels in the deployment template section`, the pods know which deployment they belong to.
 
 <img width="439" alt="29" src="https://github.com/user-attachments/assets/286a8d6d-cd1f-47d0-a809-fd81058dc9d0">
 
-## Connecting Deployment and Pods to Services
+### Connecting Deployment and Pods to Services
 
 <img width="727" alt="30" src="https://github.com/user-attachments/assets/ec6dfab1-2008-4294-95ae-fcc1868cc30d">
 
-## Map Pod ports to Service ports
+### Map Pod ports to Service ports
 
 <img width="812" alt="31" src="https://github.com/user-attachments/assets/69869816-c2a9-4b93-9e4a-75d5b8977254">
