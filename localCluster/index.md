@@ -14,5 +14,3 @@ Minikube
 - Can be deployed/run as a VM, a container, or bare-metal on your host.
   - Minikube can be run as a docker container(if the driver is docker).
   - At the same time, uses pre-installed docker container runtime to run containers inside Minikube cluster.
- 
-Kubectl - Kubernetes command line tool for communicating with a Kubernetes cluster's control plane, using the Kubernetes API.
