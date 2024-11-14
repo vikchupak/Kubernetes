@@ -7,7 +7,7 @@ kubectl get nodes|pod|service|replicaSet|deployment [-o wide]
 ![image](https://github.com/user-attachments/assets/6c3d26d8-2152-4023-83bc-f3aa179de3e2)
 - kubernetes is a default service. Always in the system.
 ```bash
-# See deployment status
+# See deployment status in yaml format
 kubectl get deployment -o yaml [> nginx-deployment-status.yaml]
 ```
 ```bash
