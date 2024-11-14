@@ -9,7 +9,7 @@ Each config file has 3 parts:
 - `status` (automatically generated and added by Kubernetes). Kubernetes continuously compares `specification - desired state/status` vs `status - actual state/status` and syncs the states/statuses.
   - status data gets from `etcd`
 
-## Labels && selectors
+## Labels and Selectors
 
 Labels(key-value pairs) and selectors(key-value pairs) are used to establish connection between components.
 
