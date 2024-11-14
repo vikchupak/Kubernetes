@@ -1,5 +1,19 @@
 - Way to organise resources
+  - Better overview
+  - Grouping resourses. Example:
+    - Database
+    - Monitoring
+    - Elastic Stack
+    - Nginx-Ingress
+  - Avoid conflicts when many teams work in the same namespace, like conflicting (the same) names
+  - Resource sharing - reuse the same components for Staging and Development env
+  - Restrict access to namespaces for different teams. Limit resources(CPU, RAM, Storage) per namespace.
 - Like virtual cluster inside a cluster
+
+Limitations
+- We cannot access most resources from another namespace
+- BUT we can access service in another namespace like `service-name.namespace-name`
+- Components that cannot be created within a namespace: Volume, Node. Command `kubectl api-resources --namespaced=false|true`
 
 ## 4 Namespaces per default
 - `default` - Namespace where all resources are created by default.
