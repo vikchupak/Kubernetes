@@ -31,3 +31,14 @@ Labels(key-value pairs) and selectors(key-value pairs) are used to establish con
 ### Map Pod ports to Service ports
 
 <img width="812" alt="31" src="https://github.com/user-attachments/assets/69869816-c2a9-4b93-9e4a-75d5b8977254">
+
+*****
+
+We can put multiple documents to the same yaml file.
+
+Usually, deployment and service are put into the same file because they usually belong together.
+
+We can execute the file, and `kubectl` will create/update all the components described in the file.
+
+***Note: to address to another service we can use service name alias like `http://<service-name>:[<internal-service-port>]`***
+
