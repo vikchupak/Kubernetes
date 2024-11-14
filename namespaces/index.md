@@ -24,7 +24,7 @@ Limitations
 - `kube-public` - Publically accessible data. A config map that contains CLUSTER info. Command `kubectl cluster-info` 
 - `kube-system` - System namespace. We do not touch it.
 
-Can be also created with config files.
+***Can be also created with config files.***
 
 List namespaces
 ```bash
