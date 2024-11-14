@@ -12,8 +12,8 @@ kubectl create pod
 kubectl create deployment nginx-depl --image=nginx [options]
 ```
 ```bash
+# Edit deployment [file] in terminal editor
 kubectl edit deployment <deploymentName>
-# Opens deployment file for editing
 ```
 ```bash
 # Delete deployment via terminal
