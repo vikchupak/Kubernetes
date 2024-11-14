@@ -3,7 +3,7 @@
 Each config file has 3 parts:
 - `metadata` of a component being created
 - `spec` (specification) - congigs to apply to that component
-  - includes `template` section - it is a nested config file - blueprint for pods within the deployment - applies to pods
+  - Deployment includes `template` section - it is a nested config file - blueprint for pods within the deployment - applies to pods
     - has own `metadata`
     - has own `spec`
 - `status` (automatically generated and added by Kubernetes). Kubernetes continuously compares `specification - desired state/status` vs `status - actual state/status` and syncs the states/statuses.
