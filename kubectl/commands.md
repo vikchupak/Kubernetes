@@ -12,7 +12,7 @@ kubectl create pod
 kubectl create deployment nginx-depl --image=nginx [options]
 ```
 ```bash
-# Edit deployment [file] in terminal editor
+# Edit deployment [file] via terminal editor
 kubectl edit deployment <deploymentName>
 ```
 ```bash
@@ -20,12 +20,12 @@ kubectl edit deployment <deploymentName>
 kubectl delete deployment <deploymentName>
 ```
 ```bash
-# Crete or edit a component via deployment file (yaml)
+# Crete or edit a component via config file (yaml)
 # In the file, kind attribute used as component type
 kubectl apply -f <fileName>
 ```
 ```bash
-# Delete a component via deployment file (yaml)
+# Delete a component via config file (yaml)
 kubectl delete -f <fileName>
 ```
 ## Debugging pods
