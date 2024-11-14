@@ -7,6 +7,7 @@
   spec:
     selector:
       app: mongodb
+    # type: ClusterIP # implicit default type
     ports:
       - protocol: TCP
       port: 27017
