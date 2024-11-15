@@ -26,3 +26,14 @@ minikube start
 # https://minikube.sigs.k8s.io/docs/handbook/addons/ingress-dns/#Linux
 minikube addons enable ingress
 ```
+
+**In Minikube**, LoadBalancer service and Ingress require a tunnel to allow external access to the cluster.
+- https://minikube.sigs.k8s.io/docs/commands/tunnel/
+```bash
+# For Ingress
+minikube tunnel
+```
+```bash
+# For LoadBalancer service
+minikube service <service-name>
+```
