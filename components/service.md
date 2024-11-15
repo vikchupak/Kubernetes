@@ -6,6 +6,7 @@
   - Partly external via node-ip.
   - `spec.ports.nodePort` to make service accessible externally.
   - `http://<**any**-node-ip>:<node-port-that-maps-on-service-port>`
+  - **A service spans accross all nodes**
 - LoadBalancer
   - External.
 - Headless
