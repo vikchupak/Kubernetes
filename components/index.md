@@ -15,7 +15,9 @@
       - `kubelet` - kubernetes process that has interface with the container runtime and the node machine. Takes the configuration and starts the pod with a container inside assigning resouses from the node to the container
       - `kube proxy` - forwards request from services to pods in an "inteligent" and efficient way
     
-  ***Note: In case we have multiple Master Nodes, `API servers` are load-balensed and `etcd` forms distibuted storage across all master nodes.***
+  ***Note1: In case we have multiple Master Nodes, `API servers` are load-balensed and `etcd` forms distibuted storage across all master nodes.***
+
+  ***Note2: Each node has an IP range and the node's pods get an IP assigned from the range.***
 
 - **Pod**. Smallest unit in Kubernetes. [**Abstration** over/of container].
   - Layer on top of the container.
