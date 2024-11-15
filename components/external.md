@@ -1,4 +1,5 @@
 # 3 ways to expose cluster
-- LoadBalancer Service
-- NodePort Service
-- Ingress
+- LoadBalancer (service)
+- NodePort (service)
+- Ingress (resource)
+  - Includes `Ingress Controller` (service|component)
