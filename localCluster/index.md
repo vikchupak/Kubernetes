@@ -23,5 +23,6 @@ minikube start
 ```
 ```bash
 # Start k8s nginx ingress controller implementation
+# https://minikube.sigs.k8s.io/docs/handbook/addons/ingress-dns/#Linux
 minikube addons enable ingress
 ```
