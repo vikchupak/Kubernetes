@@ -21,3 +21,7 @@ minikube status
 ```bash
 minikube start
 ```
+```bash
+# Start k8s nginx ingress controller implementation
+minikube addons enable ingress
+```
