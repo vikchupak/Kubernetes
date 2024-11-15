@@ -86,8 +86,8 @@
  
 - **StatefulSet**. [Replication]. The same as Deployment, but for **StateFUL** apps
   - Abstraction on top of pods
-  - For **StateFUL** apps. Apps like DB have a state - its data via volume. The pods of the DB share the same data storage and this requres sync between pods who write/reads data to avoid data inconsistency. https://github.com/VIK2395/JWT_auth/blob/main/jwt/jwt.vs.session.md
-    - Pod replicas are not identical as the slave DBs lagg behind the master DB. So, in this case, we need direct communication to a spesific pod which represents a spesific master/slave DB.
+  - For **StateFUL** apps. Apps like DB have a state - its data via volume. When the same pod restarts it has to use the same volume via PersistentVolumeClaims (PVCs). In addition, slave DBs have to sync with master DB to avoid data inconsistency. https://github.com/VIK2395/JWT_auth/blob/main/jwt/jwt.vs.session.md
+    - Pod replicas are not identical as the slave DBs lagg behind the master DB. So, in this case, we need direct communication between pods which represents a spesific master/slave DBs for them to sync data.
     - For such apps, it is better to use Headless services which provides pod IPs.
   - Sets number of pod replicas
   - Deplying to StatefulSet is **NOT easy**. This is why it common practice to host DB apps outside of the k8s cluster.
