@@ -24,7 +24,7 @@
   - Allows to replace the containers themselves inside pods.
   - You interact with the Kubernetes layer, not directly with container technologies.
   - Usually 1 pod per 1 container. But it allows to run multiple containers inside a pod.
-  - Kubernetes creates virtual network out-of-the-box. In Kubernetes, each pod gets its own **internal** IP address, NOT containers. **Direct Pod-to-Pod** communication - all pods in a cluster can communicate with each other using these IPs **regardless of they belong to different services**.
+  - Kubernetes creates virtual network out-of-the-box. In Kubernetes, each pod gets its own **internal** IP address, NOT containers. **Direct Pod-to-Pod** communication - all pods in a cluster can communicate with each other using these IPs **regardless of they belong to different services/nodes**.
   - Pods are **ephemeral(the term comes from the Greek word ephemeros, which means "lasting only a day.")**, which means they can die very easily. In general, something ephemeral is designed to be temporary, only existing for as long as it's needed, and then discarded.
       - For, example when a container/application crashes, the pod will die and a new pod will be created in its place. **New IP will be assigned on re-creation**
 
@@ -36,9 +36,9 @@
   - Possible communications:
     - direct service-to-service
     - direct pod-to-pod
-    - pod-to-pod through service
+    - pod-to-pod through service (when passing through a service, the destination pod is selected randomly)
   - External and Internal services.
-    - External can be accessed from external sources (http://<**node-ip**>:<**node-port-that-maps-on-service-port**>)
+    - External (LoadBalancer and NodePort) can be accessed from external sources (NodePort http://<**node-ip**>:<**node-port-that-maps-on-service-port**>)
     - Internal is NOT accessible/visible for external sources
 
 - **Ingress** (Cluster gateway?) [Route traffic to into cluster]
@@ -86,9 +86,12 @@
  
 - **StatefulSet**. [Replication]. The same as Deployment, but for **StateFUL** apps
   - Abstraction on top of pods
-  - For **StateFUL** apps. Apps like DB has a state - its data via volume. The pods of the DB share the same data storage and this requres sync between pods who write/reads data to avoid data inconsistency. https://github.com/VIK2395/JWT_auth/blob/main/jwt/jwt.vs.session.md
+  - For **StateFUL** apps. Apps like DB have a state - its data via volume. The pods of the DB share the same data storage and this requres sync between pods who write/reads data to avoid data inconsistency. https://github.com/VIK2395/JWT_auth/blob/main/jwt/jwt.vs.session.md
+    - Pod replicas are not identical as the slave DBs lagg behind the master DB. So, in this case, we need direct communication to a spesific pod which represents a spesific master/slave DB.
+    - For such apps, it is better to use Headless services which provides pod IPs.
   - Sets number of pod replicas
-  - Deplying to StatefulSet is **NOT easy**. This is why it common practice to host DB apps outside of the k8s cluster
+  - Deplying to StatefulSet is **NOT easy**. This is why it common practice to host DB apps outside of the k8s cluster.
+  - 
 
 - **DeamonSet**. [Replication]
   - A term `daemon` means a background process that runs continuously and provides essential services or performs tasks without user intervention.
