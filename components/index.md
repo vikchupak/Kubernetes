@@ -91,7 +91,7 @@
     - For such apps, it is better to use Headless services which provides pod IPs.
   - Sets number of pod replicas
   - Deplying to StatefulSet is **NOT easy**. This is why it common practice to host DB apps outside of the k8s cluster.
-  - 
+  - The same DB's data must persist regardless of pods lifecycle.
 
 - **DeamonSet**. [Replication]
   - A term `daemon` means a background process that runs continuously and provides essential services or performs tasks without user intervention.
