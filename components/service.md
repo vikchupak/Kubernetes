@@ -1,11 +1,12 @@
 ## Service types
 
 - ClusterIP
-  - Default
+  - Default. Acts as a load-balancer.
 - Headless
   - Doesn't have own static/stable service IP. Returns the service's pod IPs instead.
 - NodePort
 - LoadBalancer
+  - Only service that is external.
 
 ## Config files
 
