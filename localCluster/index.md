@@ -28,6 +28,7 @@ minikube addons enable ingress
 ```
 
 **In Minikube**, LoadBalancer service and Ingress require a tunnel to allow external access to the cluster.
+- https://minikube.sigs.k8s.io/docs/handbook/accessing/
 - https://minikube.sigs.k8s.io/docs/commands/tunnel/
 ```bash
 # For Ingress
