@@ -60,4 +60,4 @@
       nodePort: 30000 # external service port. Must be in range 30000-32767
   ```
   - LoadBalancer assigns in addition an external IP
-  - In **Minikube**, the external IP is NOT assigned immediately. To "force" Minikube expose the external IP, we need to run the command additionally `minikube service <service-name>`. It will create a tunnel for our service to be accessible from localhost. 
+  - In **Minikube**, the external IP is NOT assigned immediately. To "force" Minikube expose the external IP, we need to run the command additionally `minikube service <service-name>`. ***It will create a tunnel for our service to be accessible from the localhost.***
