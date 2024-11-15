@@ -43,8 +43,8 @@
     type: LoadBalancer # This makes the service external, NOT the best type name
     ports:
       - protocol: TCP
-      port: 8081 # container/pod port
-      targertPort: 8081 # internal service port
+      port: 8081 # internal service port
+      targertPort: 8081 # container/pod port 
       nodePort: 30000 # external service port. Must be in range 30000-32767
   ```
   - LoadBalancer assigns in addition an external IP
