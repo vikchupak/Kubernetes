@@ -3,8 +3,9 @@
 - ClusterIP
   - Default. Acts as a load-balancer.
 - NodePort
-  - Partly external.
+  - Partly external via node-ip.
   - `spec.ports.nodePort` to make service accessible externally.
+  - `http://<node-ip>:<node-port-that-maps-on-service-port>`
 - LoadBalancer
   - External.
 - Headless
