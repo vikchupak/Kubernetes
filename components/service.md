@@ -2,11 +2,14 @@
 
 - ClusterIP
   - Default. Acts as a load-balancer.
+- NodePort
+  - Partly external.
+  - `spec.ports.nodePort` to make service accessible externally.
+- LoadBalancer
+  - External.
 - Headless
   - Doesn't have own static/stable service IP. Returns the service's pod IPs instead.
-- NodePort
-- LoadBalancer
-  - Only service that is external.
+  - `spec.clusterIP: None` to make a service Headless. It is still ClusterIP type.
 
 ## Config files
 
