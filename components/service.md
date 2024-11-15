@@ -3,7 +3,7 @@
 - ClusterIP
   - Default
 - Headless
-  - Doesn't have own service IP. Returns the service's pod IPs instead.
+  - Doesn't have own static/stable service IP. Returns the service's pod IPs instead.
 - NodePort
 - LoadBalancer
 
