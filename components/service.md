@@ -6,23 +6,23 @@
 - NodePort
   - External via node-ip.
   - `spec.ports.nodePort` to make service accessible externally.
-  - `http://<**any**-node-ip>:<node-port-that-maps-on-service-port>`
+  - `http://<any-node-ip>:<node-port>`
   - **A service spans accross all nodes**
-  - When NodePort service created, it also creates ClusterIP services and routes trafic from the NodePort to the ClusterIP services.
+  - When NodePort service created, it also creates ClusterIP services and routes trafic from the NodePort to the ClusterIP services. ("Wraps" ClusterIP)
   - A NodePort provides a simple way to access a service **during development or debugging** without needing a more complex setup like Ingress or LoadBalancer.
 
 - LoadBalancer
   - External.
   - Exposes a service externally by provisioning a cloud provider's load balancer (e.g., AWS ELB, GCP LB, or Azure LB).
     - LoadBalancer services in Kubernetes are primarily designed for use with cloud providers.
-  - http://<external-Load-balancer-ip>:<node-port>
+  - `http://<external-load-balancer-ip>:<node-port>`
   - Each service with type LoadBalancer gets its own external load balancer.
   - The external load balancer forwards traffic to the NodePort on the nodes.
-  - When LoadBalancer service created, it also creates NodePort services and routes trafic from the LoadBalancer to the NodePort services.
+  - When LoadBalancer service created, it also creates NodePort services and routes trafic from the LoadBalancer to the NodePort services.  ("Wraps" NodePort)
 
 - Headless
   - Doesn't have own static/stable service IP. Returns the service's pod IPs instead.
-  - `spec.clusterIP: None` to make a service Headless. It is still ClusterIP type.
+  - `spec.clusterIP: None` to make a service Headless. `It is still ClusterIP type`.
 
 ## Config files
 
