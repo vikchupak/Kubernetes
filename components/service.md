@@ -1,3 +1,14 @@
+## Service types
+
+- ClusterIP
+  - Default
+- Headless
+  - Doesn't have own service IP. Returns the service's pod IPs instead.
+- NodePort
+- LoadBalancer
+
+## Config files
+
 - Internal service. It also acts as a load-balancer despite the name.
   ```yaml
   apiVersion: v1
