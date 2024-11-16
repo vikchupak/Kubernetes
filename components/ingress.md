@@ -6,6 +6,11 @@
     - Evaluates and processes ingress rules.
     - Manage redirections.
     - Usually exposes 2 ports: 80 and 443. Usualy we set service ports to 80 or 443 for them to map/forward to ingress ports.
+    - `http://<host-mapped-to-service>:<80|443>`\
+      After tunneling
+       ```bash
+       curl -H "Host: host-mapped-to-service" http(s)://127.0.0.1:<80|443>
+       ```
  
 ```yaml
 apiVersion: networking.k8s.io/v1
