@@ -15,7 +15,7 @@
   - External.
   - Exposes a service externally by provisioning a cloud provider's load balancer (e.g., AWS ELB, GCP LB, or Azure LB).
     - LoadBalancer services in Kubernetes are primarily designed for use with cloud providers.
-  - `http://<external-load-balancer-ip(unique)>:<node-port>`; after tunnel maps on `http://127.0.0.1:<tunnel-port>`
+  - `http://<external-load-balancer-ip(unique)>:<node-port>` in produnction; after tunnel maps on `http://127.0.0.1:<tunnel-port>`
   - Each service with type LoadBalancer gets its own external load balancer.
   - The external load balancer forwards traffic to the NodePort on the nodes.
   - When LoadBalancer service created, it also creates NodePort services and routes trafic from the LoadBalancer to the NodePort services.  ("Wraps" NodePort)
