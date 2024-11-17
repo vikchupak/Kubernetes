@@ -3,16 +3,16 @@ An **NGINX Ingress Controller** is a Kubernetes-native way to manage HTTP and HT
 ## **Architecture of the NGINX Ingress Controller**
 
 ### Key Components:
-1. **Ingress Controller Pod**:
-   - Runs the NGINX instance.
-   - Watches for changes in Ingress resources and updates the NGINX configuration dynamically.
-
-2. **Ingress Resource**:
+1. **Ingress Resource**:
    - Defines the routing rules for your services (e.g., `/foo` routes to `foo-service`, `/bar` routes to `bar-service`).
 
-3. **Service**:
-   - Exposes the Ingress Controller Pod to external traffic.
-   - Commonly configured as a `LoadBalancer` or `NodePort` service.
+2. **Ingress Controller**
+   -  **Ingress (nginx) Controller Service**:
+       - Exposes the Ingress Controller Pod to external traffic.
+       - Commonly configured as a `LoadBalancer` or `NodePort` service.
+   - **Ingress (nginx) Controller Pod**:
+       - Runs the NGINX instance.
+       - Watches for changes in Ingress resources and updates the NGINX configuration dynamically.
 
 ## **How It Works**
 1. The **Ingress Controller Pod** listens for changes in Ingress resources.
