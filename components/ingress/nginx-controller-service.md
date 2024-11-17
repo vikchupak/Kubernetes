@@ -17,3 +17,6 @@ So, ingress-nginx-controller-service is a NodePort service. Probably, the tunnel
 
 In this case:
 - 127.0.0.1:80 -> EXTERNAL_IP?:31544 `<node-ip>:<node-port>`. Then this are forwarded againt to the controller service on 80 port. Then the request gets to the controller pod (nginx instance) and the nginx manages the next routing inside the cluster.
+
+Example of exposing custom node-port service
+![image](https://github.com/user-attachments/assets/a4867bbb-7eb4-4aa3-a06d-dda6b94583e6)
