@@ -1,0 +1,73 @@
+# kubectl apply -f ingress.yaml
+# minikube tunnel
+# curl http://127.0.0.1/ingress/foo
+
+kind: Pod
+apiVersion: v1
+metadata:
+  name: foo-app
+  labels:
+    app: foo
+spec:
+  containers:
+    - name: foo-app
+      # Exposes 8080 port
+      # https://hub.docker.com/layers/kicbase/echo-server/1.0/images/sha256-a82eba7887a40ecae558433f34225b2611dc77f982ce05b1ddb9b282b780fc86?context=explore
+      image: 'kicbase/echo-server:1.0'
+---
+kind: Pod
+apiVersion: v1
+metadata:
+  name: bar-app
+  labels:
+    app: bar
+spec:
+  containers:
+    - name: bar-app
+      image: 'kicbase/echo-server:1.0' # Exposes 8080 port
+---
+kind: Service
+apiVersion: v1
+metadata:
+  name: foo-service
+spec:
+  selector:
+    app: foo
+  ports:
+    - port: 3000 # service port
+      targetPort: 8080 # mapped container port
+---
+kind: Service
+apiVersion: v1
+metadata:
+  name: bar-service
+spec:
+  selector:
+    app: bar
+  ports:
+    - port: 3000 # service port
+      targetPort: 8080 # mapped container port
+---
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: example-ingress
+spec:
+  rules:
+    - http:
+        paths:
+          - pathType: Prefix
+            path: /ingress/foo
+            backend:
+              service:
+                name: foo-service
+                port:
+                  number: 3000 # service port
+          - pathType: Prefix
+            path: /ingress/bar
+            backend:
+              service:
+                name: bar-service
+                port:
+                  number: 3000 # service port
+---
