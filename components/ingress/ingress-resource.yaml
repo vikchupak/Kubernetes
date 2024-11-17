@@ -36,7 +36,7 @@ spec:
     app: foo
   ports:
     - port: 3000 # service port
-      targetPort: 8080 # mapped container port
+      targetPort: 8080 # mapped pod port
 ---
 kind: Service
 apiVersion: v1
@@ -47,7 +47,7 @@ spec:
     app: bar
   ports:
     - port: 3000 # service port
-      targetPort: 8080 # mapped container port
+      targetPort: 8080 # mapped pod port
 ---
 apiVersion: networking.k8s.io/v1
 kind: Ingress
