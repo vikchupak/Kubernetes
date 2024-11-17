@@ -1,6 +1,7 @@
 # kubectl apply -f ingress.yaml
 # minikube tunnel
 # curl http://127.0.0.1/ingress/foo
+# curl http://127.0.0.1/ingress/bar
 
 kind: Pod
 apiVersion: v1
