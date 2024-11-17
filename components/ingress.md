@@ -1,3 +1,95 @@
+- **Ingress Resource**:
+  - Specifies the rules but doesn't expose ports itself.
+  - Relies on the Ingress Controller for actual traffic handling.
+
+- **Ingress Controller Service(external)**:
+  - Listens on **ports 80 and 443**.
+  - Exposes the Ingress Controller Pod to external traffic.
+
+- **NGINX Ingress Controller Pod**:
+  - Internally listens on **ports 80 and 443**.
+  - Processes requests and forwards them to the backend services.
+
+---
+
+- **Ingress Rule**:
+  ```yaml
+  apiVersion: networking.k8s.io/v1
+  kind: Ingress
+  metadata:
+    name: example-ingress
+  spec:
+    rules:
+      - host: example.local
+        http:
+          paths:
+            - path: /foo
+              pathType: Prefix
+              backend:
+                service:
+                  name: foo-service
+                  port:
+                    number: 80
+  ```
+
+- **Ingress Controller Service**:
+  ```yaml
+  apiVersion: v1
+  kind: Service
+  metadata:
+    name: ingress-nginx-controller
+  spec:
+    ports:
+      - name: http
+        port: 80
+        targetPort: 80
+      - name: https
+        port: 443
+        targetPort: 443
+  ```
+
+### **How Traffic Flows in Kubernetes with an Ingress Resource**
+1. **Client Sends a Request**:
+   - A client sends an HTTP/HTTPS request to the **Ingress resource's external IP or domain name** (e.g., `http://example.local` or `https://example.local`).
+   - This IP is typically the external IP of the **Ingress Controller's Service**.
+
+2. **Traffic Reaches the Ingress Controller**:
+   - The **Ingress resource** does not directly handle requests. Instead, it acts as a set of rules.
+   - The **Ingress Controller** (like NGINX) is the actual application that processes these rules.
+   - The request first arrives at the **Ingress Controller's Service**, which is usually of type:
+     - **LoadBalancer**: Exposes an external IP.
+     - **NodePort**: Exposes a high port on each Kubernetes node.
+   - The Service forwards the request to the NGINX Ingress Controller Pod.
+
+3. **Ingress Controller Processes the Request**:
+   - The NGINX Ingress Controller Pod:
+     1. Parses the **Ingress resource** rules (e.g., `/foo` routes to `foo-service`, `/bar` routes to `bar-service`).
+     2. Dynamically updates its internal NGINX configuration (`nginx.conf`) based on these rules.
+
+4. **Forwarding to Backend Services**:
+   - After determining the appropriate backend service:
+     - The Ingress Controller forwards the request to the backend **Service** (e.g., `foo-service` or `bar-service`).
+     - The **Service** routes the request to one of its **Pods**.
+
+5. **Response Flow**:
+   - The backend Pod sends the response back to the NGINX Ingress Controller.
+   - The Ingress Controller sends the response to the client.
+
+---
+
+### **Illustration of Traffic Flow**
+```
+Client --> Ingress (IP/DNS) --> Ingress Controller Service (80/443) --> NGINX Ingress Pod -->
+  --> Backend Service (e.g., foo-service) --> Pod (e.g., foo-app) --> Response to Client
+```
+
+### **Summary**
+1. **Ingress Resource**: Defines rules (e.g., routes and backends).
+2. **Ingress Controller Service**: Exposes the NGINX Ingress Controller Pod to external traffic on ports 80/443.
+3. **Ingress Controller Pod**: Implements the rules and forwards traffic to backend services.
+
+*****
+
 https://minikube.sigs.k8s.io/docs/start/?arch=%2Fwindows%2Fx86-64%2Fstable%2F.exe+download#Ingress
 
 - Ingress (resource/component)
