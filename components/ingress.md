@@ -1,3 +1,5 @@
+https://minikube.sigs.k8s.io/docs/start/?arch=%2Fwindows%2Fx86-64%2Fstable%2F.exe+download#Ingress
+
 - Ingress (resource/component)
   - Includes `Ingress controller` - set of pods that run on your node k8s cluster.
     - Entrypoint to cluster.
