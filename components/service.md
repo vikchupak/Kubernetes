@@ -6,7 +6,7 @@
 - NodePort
   - External via node-ip.
   - `spec.ports.nodePort` to make service accessible externally.
-  - `http://<any-node-ip>:<node-port>`; no tunnel needed
+  - `http://<any-node-ip>:<node-port>`; See LoadBalancer. Exactly the same setting. 
   - **A service spans accross all nodes**
   - When NodePort service created, it also creates ClusterIP services and routes trafic from the NodePort to the ClusterIP services. ("Wraps" ClusterIP)
   - A NodePort provides a simple way to access a service **during development or debugging** without needing a more complex setup like Ingress or LoadBalancer.
