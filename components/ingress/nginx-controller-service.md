@@ -16,4 +16,4 @@ kubectl get service ingress-nginx-controller -n ingress-nginx
 So, ingress-nginx-controller-service is a NodePort service. And probably, the tunnel maps the localhost requests to the service IP and ports.
 
 In this case:
-- 127.0.0.1:80 -> EXTERNAL_IP?:31544 `<node-ip>:<node-port>`. Then this are forwarded againt to the controller service to on 80 port. Then nginx manages the next routing.
+- 127.0.0.1:80 -> EXTERNAL_IP?:31544 `<node-ip>:<node-port>`. Then this are forwarded againt to the controller service to on 80 port. Then the request gets to the controller pod (nginx instance) and the nginx manages the next routing.
