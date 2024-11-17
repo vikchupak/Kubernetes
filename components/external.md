@@ -2,4 +2,4 @@
 - LoadBalancer (service)
 - NodePort (service)
 - Ingress (resource)
-  - Includes `Ingress Controller` (service|component)
+  - Includes `Ingress Controller` (service)
