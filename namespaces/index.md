@@ -69,6 +69,7 @@ kubectl config set-context --current --namespace=<namespaceName>
 
 ### kubens
 - Installs separately `sudo apt install kubectx`
+- `sudo snap install kubectx --classic`
 
 List namespaces
 ```bash
