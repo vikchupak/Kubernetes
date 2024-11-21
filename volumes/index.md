@@ -1,1 +1,3 @@
-**We need a storrage that doesn't depend on the pod lifecycle**
+- **We need a storrage that doesn't depend on the pod lifecycle**
+- **Storage must be available across all nodes**
+- **Storage must surrive cluster crash**
