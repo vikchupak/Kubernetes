@@ -163,6 +163,6 @@ Local storage is a powerful option in Kubernetes when used with the appropriate 
     - cloud storage
   - **Interface to the actual storage**
   - The storage is like external plugin to the cluster(storage backend)
-  - NOT namespaced, accessible to the whole cluster
+  - **NOT namespaced**, accessible to the whole cluster
 - Persistent Volume Claim
 - Storage Class
