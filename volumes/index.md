@@ -225,3 +225,10 @@ In both cases, the volume is a way to deliver the ConfigMap or Secret data into 
   - So a pod requests a volume by a claim
   - **Namespaced**
 - Storage Class
+
+## Summary
+
+1\. Persistent Volume created and configured to use storage backend
+2\. Pod claims Volume via Volume Claim
+3\. Volume mounted into pod according to the Volume Claim
+4\. Volume mounted from Pod to Container
