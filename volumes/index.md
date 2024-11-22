@@ -1,3 +1,5 @@
+- Network-backed storage (NFS)
+
 Kubernetes doesn't provide data persistance out-of-the-box
 
 - 1\. **We need a storrage that doesn't depend on the pod lifecycle**
@@ -19,8 +21,13 @@ Local violates 2 and 3 requirements
 
 ### **Types of Local Storage in Kubernetes**
 
+Kubernetes filesystem definitions
+- **Node's Local Filesystem**: Think of this as a **sandboxed workspace** Kubernetes sets up for pods. It’s temporary, isolated, and managed by Kubernetes for specific tasks.
+- **Node's Host Filesystem**: This is the **entire computer’s hard drive**, where Kubernetes has no direct control unless explicitly configured (e.g., with HostPath).
+
+Storages
 1. **EmptyDir**:
-   - **Tied to the pod** on a specific node and exists on the **node's local storage(node's local filesystem)** (e.g., /var/lib/kubelet).
+   - **Tied to the pod** on a specific node and exists on the **node's local storage(node's local filesystem)** (e.g., `/var/lib/kubelet`).
      - The **node's local filesystem** refers to the physical or virtual disk storage **on the host machine where the Kubernetes node is running**.
      - An `EmptyDir` volume creates temporary storage for a pod on the **node's local filesystem**, usually under `/var/lib/kubelet/pods/<pod-id>/volumes/`
      - Even though the data resides on the **host machine**, Kubernetes abstracts it away, so pods interact with it as if it were their own **local storage**.
@@ -55,8 +62,15 @@ Local violates 2 and 3 requirements
 
 3. **HostPath**:
    - Tied to a specific directory or file on the **host's filesystem**.
+   - A **HostPath** volume gives the pod direct access to a specific file or directory on the **node's host filesystem**.
    - A volume that mounts a file or directory from **the host node's** filesystem into the pod.
-   - Useful for debugging or accessing host resources but requires careful handling for security.
+     - **Security Concerns**: Exposes the **host's filesystem**, which could lead to potential risks if improperly configured.
+   - **Lifecycle**: The data is tied to the host node, not the pod. Even if the pod is deleted, the data persists on the host.
+   - **Location**: Directly uses the host node's filesystem, making it non-ephemeral and potentially shared across pods on the same node.
+   - The data is **independent of the pod’s lifecycle** and persists on the host **even after the pod is deleted**.
+   - If the pod is rescheduled to a different node, the data on the original node does not move with the pod, and a new instance of the pod won't have access to that data unless it’s rescheduled on the same node.
+   - Multiple pods running on the same node can access the same HostPath directory if they are configured to use it.
+   - This allows the pod to read/write data directly on the host machine.
 
    Example:
    ```yaml
