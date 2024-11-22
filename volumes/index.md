@@ -152,6 +152,12 @@ Storages
 
 Local storage is a powerful option in Kubernetes when used with the appropriate workloads and data durability considerations.
 
+## ConfigMap and Secret
+
+It can be accessed in ways
+- Environment Variables: Injected into a container's environment.
+- **Volumes**: Mounted as files inside a container.
+- Command-line Arguments: Used as arguments when starting containers && Direct Reference: Used by other Kubernetes resources, such as image pull secrets.
 
 ## Components
 - Persistent Volume
