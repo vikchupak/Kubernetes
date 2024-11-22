@@ -225,10 +225,25 @@ In both cases, the volume is a way to deliver the ConfigMap or Secret data into 
   - So a pod requests a volume by a claim
   - **Namespaced**
 - Storage Class
+  - Created via yaml files
+  - To provide Persistent Volumes dynamicly when Persistent Volume Claim claims it (automated process)
+  - **Storage backend is defined in the Storage Class component via "provisioner" attribute. Each storage backend has its own provisioner.**
+    - internal: `kubernetes.io`
+    - external
+  - Requested by Persistent Volume
 
 ## Summary
 
-1\. Persistent Volume created and configured to use storage backend
-2\. Pod claims Volume via Volume Claim
-3\. Volume mounted into pod according to the Volume Claim
-4\. Volume mounted from Pod to Container
+- 1\. Persistent Volume created and configured to use storage backend
+- 2\. Pod claims Volume via Volume Claim
+- 3\. Volume mounted into pod according to the Volume Claim
+- 4\. Volume mounted from Pod to Container
+
+Via Storage Class
+
+- 1\. Storage Class has configured storage backend via provisioner
+- 2\. Persistent Volume refers to Storage Class in config
+- 3\. Pod claims Volume via Volume Claim
+- 4\. The claimed Persistent Volume file uses/refers the Storage Class which creates another Persistent Volume that meets the needs of the claim.
+- 5\. Volume mounted into pod according to the Volume Claim
+- 6\. Volume mounted from Pod to Container
