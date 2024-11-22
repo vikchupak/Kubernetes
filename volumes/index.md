@@ -157,7 +157,7 @@ Local storage is a powerful option in Kubernetes when used with the appropriate 
 
 Can be accessed in ways
 - Environment Variables: Injected into a container's environment.
-- **Volumes**: Mounted as files inside a container.
+- **Volumes**: Mounted as files inside a container. (The same way as Persistent Volume)
 - Command-line Arguments: Used as arguments when starting containers && Direct Reference: Used by other Kubernetes resources, such as image pull secrets.
 
 In Kubernetes, **ConfigMaps** and **Secrets** are not volumes themselves, but they can be mounted into a pod as **volumes**.
