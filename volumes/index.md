@@ -1,4 +1,4 @@
-Kubernetes doesn't provide data persistance out-of-the-box/
+Kubernetes doesn't provide data persistance out-of-the-box
 
 - 1\. **We need a storrage that doesn't depend on the pod lifecycle**
 - 2\. **Storage must be available across all nodes**
