@@ -219,4 +219,9 @@ In both cases, the volume is a way to deliver the ConfigMap or Secret data into 
   - The storage is like external plugin to the cluster(storage backend)
   - **NOT namespaced**, accessible to the whole cluster
 - Persistent Volume Claim
+  - Created via yaml files
+  - Referenced in pod config file (by devs).
+  - Mapped to a Persistent Volume that satisfies to The Persistent Volume Claim
+  - So a pod requests a volume by a claim
+  - **Namespaced**
 - Storage Class
