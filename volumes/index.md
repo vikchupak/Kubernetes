@@ -234,6 +234,8 @@ In both cases, the volume is a way to deliver the ConfigMap or Secret data into 
 
 ## Summary
 
+Without Storage Class
+
 - 1\. Persistent Volume created and configured to use storage backend
 - 2\. Pod claims Volume via Volume Claim
 - 3\. Volume mounted into pod according to the Volume Claim
@@ -241,9 +243,18 @@ In both cases, the volume is a way to deliver the ConfigMap or Secret data into 
 
 Via Storage Class
 
+Pre-Provisioned PVs. No dynamic creation of PVs
 - 1\. Storage Class has configured storage backend via provisioner
-- 2\. Persistent Volume refers to Storage Class in config
-- 3\. Pod claims Volume via Volume Claim
-- 4\. The claimed Persistent Volume file uses/refers the Storage Class which creates another Persistent Volume that meets the needs of the claim.
+- 2\. Existing Persistent Volume refers to Storage Class
+- 3\. Pod claims Persistent Volume via Persistent Volume Claim
+- 4\. The claimed Persistent Volume uses/refers the Storage Class which creates another Persistent Volume that meets the needs of the claim.
 - 5\. Volume mounted into pod according to the Volume Claim
 - 6\. Volume mounted from Pod to Container
+
+Dynamically Provisioned PVs
+- The Storage Class has configured storage backend via provisioner
+- Persistent Volume Claim refers Storage Class
+- Pod claims Volume via the Persistent Volume Claim
+- The Storage Class creates a Persistent Volume that meets the needs of the claim.
+- Volume mounted into pod
+- Volume mounted from Pod to Container
