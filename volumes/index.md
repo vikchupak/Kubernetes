@@ -1,4 +1,5 @@
-- Network-backed storage (NFS)
+- Network-backed storage (nfs storage)
+- Cloud storage
 
 Kubernetes doesn't provide data persistance out-of-the-box
 
