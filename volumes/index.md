@@ -11,6 +11,8 @@ Kubernetes doesn't provide data persistance out-of-the-box
 
 Local violates 2 and 3 requirements
 
+**A Pod shares volumes to its containers.**
+
 **Local storage** in Kubernetes refers to storage that is **tied to a specific node** in the cluster, rather than being abstracted or distributed across multiple nodes (as with persistent volumes from cloud providers or networked storage solutions). It is typically used for scenarios where data locality is important or performance is critical, such as caching or temporary storage for a single pod.
 
 ### **Key Features of Local Storage**
