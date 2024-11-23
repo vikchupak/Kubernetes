@@ -20,7 +20,8 @@
   ***Note2: Each node has an IP range and the node's pods get an IP assigned from the range.***
 
 - **Pod**. Smallest unit in Kubernetes. [**Abstration** over/of container].
-  - Layer on top of the container.
+  - Layer on top of the container(s).
+  - **Pods don't have their own file systems**; each container inside the Pod has its own isolated file system.
   - Allows to replace the containers themselves inside pods.
   - You interact with the Kubernetes layer, not directly with container technologies.
   - Usually 1 pod per 1 container. But it allows to run multiple containers inside a pod.
