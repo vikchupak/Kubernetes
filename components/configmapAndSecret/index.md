@@ -11,3 +11,5 @@ Classic vs volumes
 - **We can create files to mount into a pod and then from the pod to the containers via volumes.**
 
 In Kubernetes, **ConfigMaps** and **Secrets** are not volumes themselves, but they can be mounted into a pod as **volumes**.
+
+- **Volumes**: https://github.com/VIK2395/Kubernetes/blob/main/components/configmapAndSecret/volumes.md
