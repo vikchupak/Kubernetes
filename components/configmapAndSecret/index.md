@@ -12,4 +12,5 @@ Classic vs volumes
 
 In Kubernetes, **ConfigMaps** and **Secrets** are not volumes themselves, but they can be mounted into a pod as **volumes**.
 
+- **Classic**: 
 - **Volumes**: https://github.com/VIK2395/Kubernetes/blob/main/components/configmapAndSecret/volumes.md
