@@ -48,3 +48,7 @@ kubectl describe node|pod|service|replicaSet|deployment <componentName>
 # Open pod interactive terminal
 kubectl exec -it <podName> -- bin/bash
 ```
+```bash
+# Open container inside pod in interactive terminal
+kubectl exec -it <pod-name> -c <container-name> -- /bin/bash
+```
