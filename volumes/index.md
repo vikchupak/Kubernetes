@@ -153,7 +153,7 @@ Storages
 
 Local storage is a powerful option in Kubernetes when used with the appropriate workloads and data durability considerations.
 
-## ConfigMap and Secret
+## ConfigMap and Secret as volumes
 
 - https://github.com/VIK2395/Kubernetes/blob/main/components/configmapAndSecret/index.md
 
