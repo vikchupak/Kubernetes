@@ -1,6 +1,6 @@
 ## ConfigMap and Secret
 
-ConfigMap and Secret are Local **Volum Types** in kubernetes.
+ConfigMap and Secret are Local **Volum Types** in kubernetes. (**?**) (Nana)
 
 Can be used as
 - Environment Variables: Injected into a container's environment.
@@ -12,7 +12,7 @@ Classic vs volumes
 - **"Classic" `ConfigMap` and `Secret` provide individual key-value pairs, BUT it is NOT config files that apps can read.**
 - **We can create files to mount into a pod and then from the pod to the containers via volumes.**
 
-In Kubernetes, **ConfigMaps** and **Secrets** are not volumes themselves, but they can be mounted into a pod as **volumes**.
+In Kubernetes, **ConfigMaps** and **Secrets** are not volumes themselves, but they can be mounted into a pod as **volumes**. (**?**) (Chat-Gpt)
 
 - **Classic**: https://github.com/VIK2395/Kubernetes/blob/main/components/configmapAndSecret/classic.md
 - **Volumes**: https://github.com/VIK2395/Kubernetes/blob/main/components/configmapAndSecret/volumes.md
