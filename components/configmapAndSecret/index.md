@@ -17,7 +17,20 @@ When you mount a ConfigMap or Secret as a volume:
 1. You define it in the `volumes` section of a pod's specification.
 2. You specify how and where to mount it in the container.
 
-#### **ConfigMap Volume Example**
+## **ConfigMap Volume Example**
+
+```yaml
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: my-configmap
+data:
+  app.properties: |
+    app.name=MyApplication
+    app.version=1.0.0
+  welcome.message: "Welcome to Kubernetes ConfigMap!"
+```
+
 ```yaml
 apiVersion: v1
 kind: Pod
@@ -36,7 +49,18 @@ spec:
       name: my-configmap
 ```
 
-#### **Secret Volume Example**
+`app.properties` file content
+```plaintext
+app.name=MyApplication
+app.version=1.0.0
+```
+
+`welcome.message` file content
+```plaintext
+Welcome to Kubernetes ConfigMap!
+```
+
+## **Secret Volume Example**
 ```yaml
 apiVersion: v1
 kind: Pod
