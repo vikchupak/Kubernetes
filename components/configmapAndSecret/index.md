@@ -1,5 +1,7 @@
 ## ConfigMap and Secret
 
+ConfigMap and Secret are Local **Volum Types** in kubernetes.
+
 Can be used as
 - Environment Variables: Injected into a container's environment.
 - **Volumes** mounted as files inside a container. (The same way as Persistent Volume).
