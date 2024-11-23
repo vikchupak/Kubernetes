@@ -3,6 +3,7 @@
 - https://minikube.sigs.k8s.io/docs/handbook/addons/ingress-dns/#Linux
 - https://minikube.sigs.k8s.io/docs/handbook/accessing/
   ![image](https://github.com/user-attachments/assets/bbe8b263-fb8d-498e-80a1-6b7fabf3d734)
+  ![image](https://github.com/user-attachments/assets/c860f9e9-ebae-4dfd-a816-c940fd79bea6)
 
 # Minikube
 
