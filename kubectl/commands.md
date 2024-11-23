@@ -48,6 +48,10 @@ kubectl describe node|pod|service|replicaSet|deployment <componentName>
 # Open pod interactive terminal
 kubectl exec -it <podName> -- bin/bash
 ```
+- This command attaches you to the default container of the Pod.
+- If the Pod has multiple containers, Kubernetes defaults to the first container listed in the Pod's YAML manifest.
+- You interact with this container's isolated file system.
+
 ```bash
 # Open container inside pod in interactive terminal
 kubectl exec -it <pod-name> -c <container-name> -- /bin/bash
