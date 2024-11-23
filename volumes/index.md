@@ -162,6 +162,9 @@ Can be accessed in ways
 
 In Kubernetes, **ConfigMaps** and **Secrets** are not volumes themselves, but they can be mounted into a pod as **volumes**.
 
+- **"Classic" `ConfigMap` and `Secret` provide individual key-value pairs, BUT it is NOT config files that apps can read.**
+- **We can create files to mount into a pod and then from the pod to the containers.**
+
 ### Mounting as Volumes
 When you mount a ConfigMap or Secret as a volume:
 1. You define it in the `volumes` section of a pod's specification.
