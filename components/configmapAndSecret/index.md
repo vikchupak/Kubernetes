@@ -101,4 +101,7 @@ admin
 password
 ```
 
+- Each key-value pair in the Secret becomes a file.
+- The file name corresponds to the key, and the file content corresponds to the value.
+
 In both cases, the volume is a way to deliver the ConfigMap or Secret data into the pod's filesystem.
