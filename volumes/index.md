@@ -170,6 +170,7 @@ Local storage is a powerful option in Kubernetes when used with the appropriate 
   - **Interface to the actual storage**
   - The storage is like external plugin to the cluster(storage backend)
   - **NOT namespaced**, accessible to the whole cluster
+  - Is **NOT** tied to other **components'** lifecycle (so persists even when all pods claiming the volume die)
 - Persistent Volume Claim
   - Created via yaml files
   - Referenced in pod config file (by devs).
