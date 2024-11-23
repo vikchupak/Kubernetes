@@ -61,6 +61,18 @@ Welcome to Kubernetes ConfigMap!
 ```
 
 ## **Secret Volume Example**
+
+```yaml
+apiVersion: v1
+kind: Secret
+metadata:
+  name: my-secret
+type: Opaque
+data:
+  username: YWRtaW4=   # Base64 encoded "admin"
+  password: cGFzc3dvcmQ=   # Base64 encoded "password"
+```
+
 ```yaml
 apiVersion: v1
 kind: Pod
@@ -77,6 +89,16 @@ spec:
   - name: secret-volume
     secret:
       secretName: my-secret
+```
+
+`username` file content
+```plaintext
+admin
+```
+
+`password` file content
+```plaintext
+password
 ```
 
 In both cases, the volume is a way to deliver the ConfigMap or Secret data into the pod's filesystem.
