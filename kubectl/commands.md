@@ -48,6 +48,7 @@ kubectl describe node|pod|service|replicaSet|deployment <componentName>
 # Open pod interactive terminal
 kubectl exec -it <podName> -- bin/bash
 ```
+- **Pods don't have their own file systems**; each container inside the Pod has its own isolated file system.
 - This command attaches you to the default container of the Pod.
 - If the Pod has multiple containers, Kubernetes defaults to the first container listed in the Pod's YAML manifest.
 - You interact with this container's isolated file system.
