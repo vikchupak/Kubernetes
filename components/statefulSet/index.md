@@ -22,7 +22,7 @@
 - main/master database **reads and writes** and replicas/slaves databases **reads only**
 - Each Pod uses its own physical storage, so the pods' storages are NOT shared
 - Replicas sync data with the master continuously to be up-to-date
-- We have to manage yourself the following because there are no out-of-the-box solution by kubernetes
+- We have to manage yourself the following (because there are no out-of-the-box solutions by kubernetes)
   - Configure cloning and data sync
   - Set remote storage
   - Manage backups
