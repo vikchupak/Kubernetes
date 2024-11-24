@@ -1,4 +1,4 @@
-### Cluster on On-promises
+## Cluster on On-promises
 - **Spin up**
   - Create a cluster from a scratch. We need to create and manage everithing yourselves
     - Create and manage **master** and worker nodes.
@@ -12,7 +12,7 @@
     - We can set up Ingress Controller as Load Balancer
       - Nginx inside controller can be used as load bancer
 
-### Cluster on Cloud using Managed service
+## Cluster on Cloud using Managed service
 - **Spin up**
   - Most setup is automated and done by cloud provider
   - We select number of worker nodes and resouces on them with everything pre-installed
