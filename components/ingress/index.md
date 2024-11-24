@@ -6,7 +6,9 @@ An **NGINX Ingress Controller** is a Kubernetes-native way to manage HTTP and HT
 1. **Ingress Resource**:
    - Defines the routing rules for your services (e.g., `/foo` routes to `foo-service`, `/bar` routes to `bar-service`).
 
-2. **Ingress Controller**
+2. **Ingress Controller**\
+   An application responsible for implementing Ingress rules.
+
    -  **Ingress (nginx) Controller Service**:
        - Exposes the Ingress Controller Pod to external traffic.
        - Commonly configured as a `LoadBalancer` or `NodePort` service.
