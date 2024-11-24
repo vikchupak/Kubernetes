@@ -7,8 +7,10 @@
     - Create Persistent Volume
     - Attach the volumes to pods
 - **Load balancing**
-  - We need to install and run Ingress Controller as Load Balancer to manage routing of incomming requests
+  - We need to install and run Ingress Controller to manage routing of incomming requests
     - Configure your routing rules
+    - We can set up Ingress Controller as Load Balancer
+      - Nginx inside controller can be used as load bancer
 
 ### Cluster on Cloud using Managed service
 - **Spin up**
@@ -21,6 +23,7 @@
 - **Load balancing**
   - Cloud providers provide their own Load Balancer implementations
     - **It stands in front of the Ingress controller**. In this scenario Ingress controller doesn't work as a Load bancer, but just a "router".
+    - The cloud load balancer routes external traffic to the Ingress Controller.
   - We can configure a session stickiness
   - We can set SSL/TLS Certification
 - **Migration to another cloud**
