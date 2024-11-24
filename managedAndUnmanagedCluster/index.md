@@ -22,7 +22,7 @@
   - We can use `Storage Class` to dynamicly provide storage by cloud provider
 - **Load balancing**
   - Cloud providers provide their own Load Balancer implementations
-    - **It stands in front of the Ingress controller**. In this scenario Ingress controller doesn't work as a Load bancer, but just a "router".
+    - **It stands in front of the Ingress controller**. In this scenario Ingress controller works as a "router".
     - The cloud load balancer routes external traffic to the Ingress Controller.
   - We can configure a session stickiness
   - We can set SSL/TLS Certification
