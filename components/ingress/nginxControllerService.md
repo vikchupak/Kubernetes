@@ -4,7 +4,7 @@ kubectl get service -o yaml ingress-nginx-controller -n ingress-nginx
 ```
 
 Output\
-https://github.com/VIK2395/Kubernetes/blob/main/components/ingress/nginx-controller-service.yaml
+https://github.com/VIK2395/Kubernetes/blob/main/components/ingress/files/nginx-controller-service.yaml
 
 Show ingress-nginx-controller service config standard (see ports)
 ```bash
