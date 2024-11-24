@@ -1,9 +1,31 @@
 ### Cluster on On-promises
-- Create a cluster from a scratch. We need to create and manage everithing yourselves
-  - Create and manage **master** and worker nodes.
+- **Spin up**
+  - Create a cluster from a scratch. We need to create and manage everithing yourselves
+    - Create and manage **master** and worker nodes.
+- **Data persistance**
+  - We need to create physical storage and make it available for the cluster
+    - Create Persistent Volume
+    - Attach the volumes to pods
+- **Load balancing**
+  - We need to install and run Ingress Controller as Load Balancer to manage routing of incomming requests
+    - Configure your routing rules
 
-### Cluster on Cloud
-- Managed service.
+### Cluster on Cloud using Managed service
+- **Spin up**
   - Most setup is automated and done by cloud provider
-  - We select number of worker nodes with everything pre-installed
-  - Master nodes are managed and created by cloud provider. So we only pay for worker nodes. 
+  - We select number of worker nodes and resouces on them with everything pre-installed
+  - Master nodes are managed and created by cloud provider. So we only pay for worker nodes.
+  - Select region/data center to decrease network latency
+- **Data persistance**
+  - We can use `Storage Class` to dynamicly provide storage by cloud provider
+- **Load balancing**
+  - Cloud providers provide their own Load Balancer implementations
+    - **It stands in front of the Ingress controller**. In this scenario Ingress controller doesn't work as a Load bancer, but just a "router".
+  - We can configure a session stickiness
+  - We can set SSL/TLS Certification
+- **Migration to another cloud**
+  - Not easy at all as cloud providers provide a lof of cloud-specific features, though very similar.
+    - Your apps get highly tied to a cloud provider
+    - Re-programming and reconfiguring necessary
+- **Automation**
+  - Cloud providers provide access to their resouces via automation tools (Terraform, Ansible), which allows to automate your infrastructure/devops work
