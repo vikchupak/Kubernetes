@@ -1,4 +1,4 @@
-## INGRESS CONTROLLER IS NOT A LOAD BALANCER, BUT A "ROUTER"
+## Ingress Controller is NOT a LOAD BALANCER, but a "ROUTER"
 
 ### **The Role of Ingress Controller**
 - The **Ingress Controller** is responsible for routing **external HTTP(S)** traffic to the correct **Kubernetes services** based on **Ingress rules**.
