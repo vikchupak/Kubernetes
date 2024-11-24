@@ -9,7 +9,7 @@
 ## StatefulSet
 - Used for stateful applications
 - **Replica pods are NOT identical and NOT interchangeable**
-- Each pod gets unique sticky persistent `Pod Identifier` (as name part) on top of the common bluprint of the pod.
+- Each pod gets unique sticky persistent `Pod Identifier` (as name part) [and thus state] on top of the common bluprint of the pod.
   - The `Pod Identifier` is fixed and ordered, like `mysql-0`, `mysql-1`, `mysql-2`. 
 - Pods must be created/deleted in specific order one by one, NO simultaneous create or delete.
   - Create order `mysql-0`, `mysql-1`, `mysql-2`
