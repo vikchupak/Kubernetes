@@ -74,3 +74,36 @@ Here’s why we still need an **external load balancer**:
 - The **Kubernetes Service** load balances the traffic **to the pods**.
 
 Even if you're using only one **Ingress Controller**, the external load balancer is still fulfilling its role of ensuring that traffic **reaches** that entry point in a controlled manner, hence the term "load balancer."
+
+## Multiple Ingress controllers
+
+Kubernetes allows you to run **multiple Ingress Controllers** in the same cluster. In fact, this is a common approach in production environments where high availability and load balancing are required.
+
+Having multiple Ingress Controllers can help with:
+- **High availability**: If one Ingress Controller instance fails, others can still handle the traffic.
+- **Fault tolerance**: If one node goes down, the traffic can be rerouted to other nodes that have the Ingress Controllers running.
+- **Load balancing**: With multiple Ingress Controllers running, an external load balancer can distribute traffic between them, improving resource utilization and ensuring there is no single point of failure.
+
+### **2. In general, Ingress Controllers are NOT Bound to Specific Nodes**
+
+But we can bound them across different nodes for high availability and scalability.
+
+### **3. Are Multiple Ingress Controllers Just Instances of the Same Controller or Completely Different?**
+- **Multiple Instances of the Same Controller**: In most cases, when we refer to **multiple Ingress Controllers**, we are talking about running **multiple instances of the same Ingress Controller** (e.g., Nginx Ingress Controller). These instances are typically configured in a way that they can all work together to handle incoming traffic.
+   - Multiple instances of the same Ingress Controller refer to **multiple pods running the same Ingress Controller**, but they typically work together as a **single logical service**.
+  - For example, you may have two or more instances(pods) of the **Nginx Ingress Controller** running on different nodes for load balancing and high availability. These instances can share the same configuration and work in a coordinated manner.
+  - The **Ingress Controller** pods are often **stateless**, meaning you can have multiple instances with the same configuration, and they will all be able to process requests as long as they share access to the required resources (like ingress rules, config maps, etc.).
+
+- **Completely Different Controllers**: You can also run **completely different Ingress Controllers** in the same cluster. For example, you might run both the **Nginx Ingress Controller** and the **Traefik Ingress Controller** side-by-side. This could be done for various reasons, such as:
+  - **Different use cases**: You may want Nginx for certain types of traffic (e.g., simple HTTP/HTTPS) and Traefik for others (e.g., for advanced routing, WebSocket support).
+  - **Compatibility with specific features**: Different Ingress Controllers may support specific features that are better suited for certain applications.
+
+  In this case, each **Ingress Controller** will have its own set of resources (e.g., ingress resources, configurations), and you can configure different routes to be handled by different controllers using annotations or namespaces.
+
+---
+
+### **How Traffic is Handled with Multiple Ingress Controllers:**
+When you have multiple Ingress Controllers in your cluster, the **external load balancer** (e.g., MetalLB, Cloud LB, etc.) will balance the traffic between the Ingress Controller instances. 
+
+- If you have **multiple Ingress Controllers of the same type**, they are typically **stateless**, so traffic is routed to the next available instance.
+- If you have **multiple types of Ingress Controllers** (e.g., Nginx and Traefik), you can use annotations or separate ingress resources to direct traffic to specific controllers.
