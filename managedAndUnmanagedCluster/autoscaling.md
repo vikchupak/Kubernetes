@@ -22,6 +22,7 @@ Kubernetes does not provide **node autoscaling out-of-the-box** by itself.
 
 - **On-Premises or Custom Environments**
   - For non-cloud environments:
+    - In on-premises Kubernetes cluster, the number of nodes is usually fixed unless you manually add or remove them.
     - Node autoscaling is **NOT out-of-the-box** but can be implemented using **Kubernetes' Cluster Autoscaler** and **infrastructure automation tools like Terraform, Ansible, or custom scripts**.
 
 ### Summary
