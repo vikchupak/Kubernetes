@@ -197,7 +197,7 @@ Here’s a simple diagram of how this works:
 ### **Step-by-Step Traffic Flow in This Setup:**
 1. **External Clients** (users, API calls) send HTTP(S) traffic to `nginx.example.com`.
 2. The **cloud load balancer** (e.g., AWS ELB) receives this traffic and forwards it to the **Ingress Controller service** (e.g., Nginx service) based on the domain name.
-3. The **Ingress Controller** (running in multiple pods) processes the request and forwards it to the appropriate **Kubernetes service** (e.g., `nginx-service`).
+3. The **Ingress Controller** (running in multiple pods) processes the request and forwards it to the appropriate **Kubernetes service** (e.g., `payment-service`).
 4. The **Kubernetes service** load-balances the request across the **application pods** (e.g., Pod 1, Pod 2) running the backend application.
 5. The backend pods process the request, and the response is sent back through the same path.
 
