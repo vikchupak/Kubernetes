@@ -1,3 +1,5 @@
+## External (Cloud) Load Balancer vs Internal Reverse Proxy
+
 External (Cloud) Load Balancer vs Internal Reverse Proxy
 - https://aws.amazon.com/blogs/containers/exposing-kubernetes-applications-part-1-service-and-ingress-resources/
 ---
@@ -6,7 +8,7 @@ External (Cloud) Load Balancer vs Internal Reverse Proxy
   - https://kubernetes-sigs.github.io/aws-load-balancer-controller/latest/
 - Internal Reverse Proxy (`Nginx Ingress Controller` as Ingress controller)
   - https://aws.amazon.com/blogs/containers/exposing-kubernetes-applications-part-3-nginx-ingress-controller/
-
+  - https://www.f5.com/products/nginx/nginx-ingress-controller
 
 ## Application Load Balancer (ALB) vs Network Load Balancer (NLB)
 
