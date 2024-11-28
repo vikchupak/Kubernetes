@@ -10,6 +10,7 @@ External (Cloud) Load Balancer vs Internal Reverse Proxy
   - When you create a Kubernetes Ingress resource, the AWS Load Balancer Controller automatically provisions an ALB or NLB to handle traffic based on the Ingress rules.
   - https://aws.amazon.com/blogs/containers/exposing-kubernetes-applications-part-2-aws-load-balancer-controller/
   - https://kubernetes-sigs.github.io/aws-load-balancer-controller/latest/
+  - https://www.eksworkshop.com/docs/fundamentals/exposing/aws-lb-controller
 - Internal Reverse Proxy (`Nginx Ingress Controller` as Ingress controller)
   - https://aws.amazon.com/blogs/containers/exposing-kubernetes-applications-part-3-nginx-ingress-controller/
   - https://www.f5.com/products/nginx/nginx-ingress-controller
