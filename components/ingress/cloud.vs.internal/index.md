@@ -1,0 +1,2 @@
+- External Load Balancer (`AWS Load Balancer Controller` as Ingress controller) [cloud managed service]
+- Internal Reverse Proxy (`Nginx Ingress Controller` as Ingress controller)
