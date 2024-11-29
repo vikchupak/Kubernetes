@@ -12,7 +12,9 @@
   - Worker Node is where Pods (and the containers inside them) actually run. Worker nodes are managed by the control plane (master node) and execute the workloads.
     - Each node must have 3 processes to manage pods
       - Container runtime like `docker containerd` or other - runs containers
+        - The container runtime handles the download of the image from the registry and stores it locally.
       - `kubelet` - kubernetes process that has interface with the container runtime and the node machine. Takes the configuration and starts the pod with a container inside assigning resouses from the node to the container
+        - The kubelet interacts with the container runtime (e.g., containerd, CRI-O, or Docker) to perform the actual image pull.
       - `kube proxy` - forwards request from services to pods in an "inteligent" and efficient way
     
   ***Note1: In case we have multiple Master Nodes, `API servers` are load-balensed and `etcd` forms distibuted storage across all master nodes.***
