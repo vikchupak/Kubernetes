@@ -2,7 +2,8 @@
 
 Managed Kubernetes (K8s) services are cloud-based or on-premises offerings that simplify the deployment, operation, and maintenance of Kubernetes clusters. These services handle the complexities of Kubernetes management, such as scaling, updates, and backups, allowing users to focus on deploying and managing their applications rather than the underlying infrastructure.
 
-- Cloud provider `Storage Class` is example of managed k8s service that dynamically provides storage by cloud provider.
+- Cloud provider `Storage Class` is an example of managed k8s service that dynamically provides storage by cloud provider.
+- Cloud provider Load Balancer as `Ingress Controller` is an example of managed k8s service.
 
 ## Cluster on On-promises
 - **Spin up**
