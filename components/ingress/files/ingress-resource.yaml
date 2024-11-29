@@ -15,6 +15,8 @@ spec:
       # Exposes 8080 port
       # https://hub.docker.com/layers/kicbase/echo-server/1.0/images/sha256-a82eba7887a40ecae558433f34225b2611dc77f982ce05b1ddb9b282b780fc86?context=explore
       image: 'kicbase/echo-server:1.0'
+      ports:
+      - containerPort: 8080 # optional to spesify, but better to add for documentation purpose
 ---
 kind: Pod
 apiVersion: v1
