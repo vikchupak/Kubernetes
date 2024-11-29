@@ -2,7 +2,8 @@
 
 **Container orchestration** tool(system). Helps to **manage** containerized applications.
 
-Uses container runtime like docker `containerd` on each node, NOT whole docker.
+Uses container runtime like docker `containerd` on each node, NOT whole docker.\
+See node in https://github.com/VIK2395/Kubernetes/blob/main/components/index.md
 
 - minikube
 - kubectl
