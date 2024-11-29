@@ -1,3 +1,7 @@
+## What is Managed Kubernetes services
+
+Managed Kubernetes (K8s) services are cloud-based or on-premises offerings that simplify the deployment, operation, and maintenance of Kubernetes clusters. These services handle the complexities of Kubernetes management, such as scaling, updates, and backups, allowing users to focus on deploying and managing their applications rather than the underlying infrastructure.
+
 ## Cluster on On-promises
 - **Spin up**
   - Create a cluster from a scratch. We need to create and manage everithing yourselves
