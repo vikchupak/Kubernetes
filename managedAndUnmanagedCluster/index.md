@@ -5,7 +5,7 @@ Managed Kubernetes (K8s) services are cloud-based or on-premises offerings that 
 - Cloud provider `Storage Class` is an example of managed k8s service that dynamically provides storage by cloud provider.
 - Cloud provider Load Balancer as `Ingress Controller` is an example of managed k8s service.
 
-## Cluster on On-promises
+## Cluster on On-promises (typically unmanaged)
 - **Spin up**
   - Create a cluster from a scratch. We need to create and manage everithing yourselves
     - Create and manage **master** and worker nodes.
@@ -19,7 +19,7 @@ Managed Kubernetes (K8s) services are cloud-based or on-premises offerings that 
     - We can set up Ingress Controller as Load Balancer
       - Nginx inside controller can be used as load bancer
 
-## Cluster on Cloud using Managed service
+## Cluster on Cloud (typically managed)
 - **Spin up**
   - Most setup is automated and done by cloud provider
   - We select number of worker nodes and resouces on them with everything pre-installed
