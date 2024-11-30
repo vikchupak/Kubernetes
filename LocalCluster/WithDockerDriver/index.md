@@ -6,3 +6,4 @@ When you use the Docker driver, Minikube runs its Kubernetes cluster within a **
   - minikube container > node inside the container > container runtime (`containerd`) inside the node > images stored inside the node by `containerd`
   - Images are node-specific and NOT shared between nodes.
 - minikube uses **host's docker enviroment** like `dockerd`, `containerd` and others via socket files mounted as volumes.
+  - https://github.com/VIK2395/Docker/blob/main/DockerInsideConatainer.md
