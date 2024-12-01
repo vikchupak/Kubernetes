@@ -3,6 +3,8 @@
   - https://artifacthub.io/
 - `Helm` includes a `templating engine` to process template files
 
+***All helm commands are run against current kubectl context***
+
 ```bash
 sudo snap install helm --classic
 ```
