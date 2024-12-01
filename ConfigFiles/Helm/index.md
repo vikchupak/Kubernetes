@@ -19,6 +19,9 @@ helm search repo bitnami/mongodb
 helm install mongodb --values helm-mongodb-values-file.yaml bitnami/mongodb
 ```
 ```bash
+helm uninstall mongodb
+```
+```bash
 # Add repo ingress-nginx
 helm repo add ingress-nginx https://kubernetes.github.io/ingress-nginx
 ```
