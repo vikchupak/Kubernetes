@@ -12,6 +12,19 @@ sudo snap install helm --classic
 # Add repo
 helm repo add bitnami https://charts.bitnami.com/bitnami
 ```
+```bash
+helm search repo bitnami/mongodb
+```
+```bash
+helm install mongodb --values helm-mongodb-values-file.yaml bitnami/mongodb
+```
+```bash
+# Add repo ingress-nginx
+helm repo add ingress-nginx https://kubernetes.github.io/ingress-nginx
+```
+```bash
+helm install nginx-ingress ingress-nginx/ingress-nginx --set controller.publishService.enabled=true
+```
 
 Helm is a powerful **package manager** for Kubernetes, used to streamline the deployment and management of applications within a Kubernetes cluster. It simplifies the process of defining, installing, and upgrading complex Kubernetes applications.
 
