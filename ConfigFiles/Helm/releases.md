@@ -56,5 +56,3 @@ In Helm, the commands `install`, `uninstall`, `upgrade`, and `rollback` perform 
 - **Uninstall**: To remove an installed release.
 - **Upgrade**: To upgrade or change the configuration of an existing release.
 - **Rollback**: To revert a release to a previous version.
-
-Would you like additional details on any of these commands?
