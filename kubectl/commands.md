@@ -1,6 +1,12 @@
 Kubectl - Kubernetes command line tool for communicating with a Kubernetes cluster's control plane, using the Kubernetes API.
 
 ```bash
+# Connect to remote cluster with kubectl
+export KUBECONFIG=/path/to/your/kubeconfig
+# By default, kubectl looks for the Kubeconfig file at ~/.kube/config
+```
+
+```bash
 kubectl get all|nodes|pods|services|replicaSet|deployment|secret|endpoints [-o wide]
 # -o wide - for more detailed info
 ```
