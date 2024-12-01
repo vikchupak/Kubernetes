@@ -5,7 +5,7 @@
 Uses container runtime like docker `containerd` on each node, NOT whole docker.\
 See node in https://github.com/VIK2395/Kubernetes/blob/main/components/index.md
 
-- minikube
+- `minikube` is a tool to run a local Kubernetes cluster; widely used for development, testing, and learning Kubernetes.
 - kubectl
 - kubens
 - kubelet (on a node, sends instructions to the container runtime (e.g., containerd) to create and manage the containers that make up the pod.
