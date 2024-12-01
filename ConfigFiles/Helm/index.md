@@ -6,7 +6,10 @@
 ```bash
 sudo snap install helm --classic
 ```
-
+```bash
+# Add repo
+helm repo add bitnami https://charts.bitnami.com/bitnami
+```
 
 Helm is a powerful **package manager** for Kubernetes, used to streamline the deployment and management of applications within a Kubernetes cluster. It simplifies the process of defining, installing, and upgrading complex Kubernetes applications.
 
