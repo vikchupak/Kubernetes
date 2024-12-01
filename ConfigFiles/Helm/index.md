@@ -41,6 +41,12 @@ Helm is a powerful **package manager** for Kubernetes, used to streamline the de
 
 2. **Releases:**
    - A **release** is a deployed instance of a Helm chart. You can have multiple releases of the same chart with different configurations.
+     ```bash
+     helm upgrade <chart-name>
+     ```
+     ```bash
+     helm rollback <chart-name>
+     ```
 
 3. **Repositories:**
    - Helm uses repositories to store and retrieve charts. Example: `https://charts.bitnami.com/bitnami`.
