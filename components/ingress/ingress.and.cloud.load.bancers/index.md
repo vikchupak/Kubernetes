@@ -25,3 +25,4 @@ AWS offers multiple types of load balancers with distinct features:
     You don’t need to deploy an Ingress Controller (like NGINX or Traefik) because ALB acts as the Ingress Controller.
   ALB supports advanced Layer 7 features such as host/path-based routing and SSL termination.
 If you want more control (e.g., custom NGINX configurations), you can still deploy an Ingress Controller and configure an NLB or CLB to forward traffic to it.
+- ALB itself acts as the Ingress Controller by interpreting Kubernetes Ingress resources.
