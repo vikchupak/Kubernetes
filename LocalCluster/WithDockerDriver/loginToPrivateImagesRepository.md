@@ -11,7 +11,7 @@ docker login <registry-hostname>
 # stores creds to ~/.docker/config.json
 ```
 
-Create secret resource
+Create secret resource. **The secred is namespaced**.
 ```yaml
 apiVersion: v1
 kind: Secret
