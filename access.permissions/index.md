@@ -15,7 +15,7 @@
    - A user is represented by their unique name in the credentials (e.g., a username in a certificate's CN field).
 
 3. **Service Accounts**:
-   - While there is no `User` resource, **ServiceAccounts** are Kubernetes-native resources. They are used to provide credentials for applications or workloads running in the cluster to access Kubernetes APIs. 
+   - While there is no `User` resource, **ServiceAccounts** are Kubernetes-native resources. They are used to provide credentials for applications or workloads running in the cluster to access Kubernetes APIs.
 
 ## Namespace permissions
 
@@ -74,6 +74,7 @@ For admins usually
 
 `ServiceAccount` resource/component
 - Link a `Role or ClusterRole` to a `ServiceAccount` with `RoleBinding or ClusterRoleBinding`. There are no service account groups in k8s.
+- ServiceAccounts are namespaced but can be linked to Role or ClusterRole
 
 ```bash
 kubectl create serviceaccount sa0
