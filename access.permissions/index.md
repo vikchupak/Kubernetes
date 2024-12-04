@@ -5,7 +5,7 @@
 
 1. **External Identity**:
    - Kubernetes does not store or manage user/group objects internally.
-   - Users are identified externally (e.g., certificates, tokens, or an external identity provider like OIDC, LDAP, or SSO systems).
+   - Users/Groups are identified externally (e.g., certificates, tokens, or an external identity provider like OIDC, LDAP, or SSO systems).
 
 2. **Authentication**:
    - Kubernetes verifies a user's identity using mechanisms like:
