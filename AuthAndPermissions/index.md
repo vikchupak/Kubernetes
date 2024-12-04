@@ -13,6 +13,7 @@
      - Bearer tokens (e.g., service account tokens or OIDC tokens)
      - Webhooks or custom authenticators
    - A user is represented by their unique name in the credentials (e.g., a username in a certificate's CN field).
+   - **Authentication happens on `apiServer`**
 
 3. **Service Accounts**:
    - While there is no `User` resource, **ServiceAccounts** are Kubernetes-native resources. They are used to provide credentials for applications or workloads running in the cluster to access Kubernetes APIs.
