@@ -3,7 +3,7 @@
 ## Best practices
 
 - Pinned image version tag
-- Liveness probe on each container
+- `Liveness probe` on each container
   - Happens while app is running
   - k8s doesn't natively handle containers/apps health, unlike other k8s resources: pods, services, etc.
   - Pod can be alive, but app inside container can crash. With the probe, container is re-created when crashed.
@@ -37,7 +37,7 @@
             port: 8080
           periodSeconds: 5
   ```
-- Readiness probe on each container
+- `Readiness probe` on each container
   - Happens during app startup
   - Check that an app is ready to receive traffic
   - Liveness probe stars **only after** successful Readiness probe
