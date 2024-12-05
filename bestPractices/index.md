@@ -124,5 +124,5 @@
 - Security
   - Ensure images free of vulnerabilities
      - Perform manual or pipeline buit scans
-  - No containers with root privileges have access to host-level resources
+  - No containers with root privileges which get access to host-level resources
   - Update your k8s to the latest version
