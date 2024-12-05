@@ -1,0 +1,5 @@
+- service-to-service api calls
+- message-based communication via a message  broker like redis or rebbitmq
+- service mesh architecture
+  - Each microservice has its own helper application(proxy/SideCar container) that handles communication to that specific service
+  - https://istio.io/latest/about/service-mesh/
