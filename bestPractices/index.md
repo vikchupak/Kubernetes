@@ -4,6 +4,7 @@
 
 - Pinned image version tag
 - Liveness probe on each container
+  - Happens while app is running
   - k8s doesn't natively handle containers/apps health, unlike other k8s resources: pods, services, etc.
   - Pod can be alive, but app inside container can crash. With the probe, container is re-created when crashed.
   - Script or program that pings the app endpoint every 5 or 10 seconds
@@ -25,4 +26,23 @@
           periodSeconds: 5
   ```
 - Readiness probe on each container
-  - 
+  - Happens during app startup
+  - Check that an app is ready to receive traffic
+  - Liveness probe stars **only after** successful Readiness probe
+  ```yaml
+  spec:
+      containers:
+      - name: service
+        image: gcr.io/google-samples/microservices-demo/productcatalogservice:v0.8.0
+        ports:
+        - containerPort: 3550
+        env:
+        - name: PORT
+          value: "3550"
+        - name: DISABLE_PROFILER
+          value: "1"
+        readinessProbe:
+          grpc:
+            port: 3550
+          periodSeconds: 5
+  ```
