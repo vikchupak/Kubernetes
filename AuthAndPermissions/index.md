@@ -27,7 +27,7 @@ For devs usually
 - controls what resources and what permissions to perform actions on these resources
 - BUT do not define "WHO" can perform actions
 
-```bash
+```yaml
 apiVersion: rbac.authorization.k8s.io/v1
 kind: Role
 metadata:
@@ -43,7 +43,7 @@ rules:
 `RoleBinding` resource/component
 - Link a Role to a user or a group
 
-```bash
+```yaml
 apiVersion: rbac.authorization.k8s.io/v1
 kind: RoleBinding
 metadata:
