@@ -1,1 +1,2 @@
 - https://github.com/GoogleCloudPlatform/microservices-demo
+- https://gitlab.com/twn-devops-bootcamp/latest/10-kubernetes/helm-chart-microservices/-/blob/main/config.yaml?ref_type=heads
