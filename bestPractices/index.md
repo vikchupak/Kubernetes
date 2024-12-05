@@ -24,6 +24,18 @@
           grpc:
             port: 3550
           periodSeconds: 5
+        # or
+        livenessProbe:
+          initialDelaySeconds: 5
+          tcpSocket:
+            port: 6379
+          periodSeconds: 5
+        # or
+        livenessProbe:
+          httpGet:
+            path: "/_healthz"
+            port: 8080
+          periodSeconds: 5
   ```
 - Readiness probe on each container
   - Happens during app startup
@@ -44,5 +56,17 @@
         readinessProbe:
           grpc:
             port: 3550
+          periodSeconds: 5
+        # or
+        readinessProbe:
+          initialDelaySeconds: 5
+          tcpSocket:
+            port: 6379
+          periodSeconds: 5
+        # or
+        readinessProbe:
+          httpGet:
+            path: "/_healthz"
+            port: 8080
           periodSeconds: 5
   ```
