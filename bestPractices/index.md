@@ -112,3 +112,17 @@
             cpu: 200m
             memory: 128Mi
   ```
+- Do not expose `NodePort`
+  - With NodePort we provide multiple entry points, which is bad from security perspective
+  - Use single entry point with `LoadBalancer` or `IngressController` instead
+- Use/Set more than 1 Replica for Deployment
+  - Provides availability even when one pod is crashes
+- Use more than 1 Worker Node
+  - Each replica should run on different node
+- Use Labels on all k8s resources
+- Use namespaces to organize resources and set permissions
+- Security
+  - Ensure images free of vulnerabilities
+     - Perform manual or pipeline buit scans
+  - No containers with root privileges have access to host-level resources
+  - Update your k8s to the latest version
