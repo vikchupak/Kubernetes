@@ -70,3 +70,45 @@
             port: 8080
           periodSeconds: 5
   ```
+- Configure `resources requests` for each container: CPU and RAM
+  - k8s guarantees each container gets requested resources
+  ```yaml
+  spec:
+      containers:
+      - name: service
+        image: gcr.io/google-samples/microservices-demo/emailservice:v0.8.0
+        ports:
+        - containerPort: 8080
+        env:
+        - name: PORT
+          value: "8080"
+        resources:
+          requests: 
+            cpu: 100m # milicores
+            memory: 64Mi # Mebibytes
+  ```
+- Configure `resources limits` for each container: CPU and RAM
+  - In some cases, a container can start consuming more than the requested resources, and consume all the node's resources
+  - Set allowed consumed resource limits
+  - When CPU Limit reached
+    - Kubernetes uses CFS (Completely Fair Scheduler) **throttling** at the kernel level to control CPU usage. This allows limiting CPU **without terminating the container**.
+  - When RAM Limit reached
+    - The container is terminated (killed) by the Kubernetes runtime (e.g., OOMKilled—Out of Memory Killed). k8s tries to **restart the container** depending on the pod's restart policy.
+  ```yaml
+      spec:
+      containers:
+      - name: service
+        image: gcr.io/google-samples/microservices-demo/emailservice:v0.8.0
+        ports:
+        - containerPort: 8080
+        env:
+        - name: PORT
+          value: "8080"
+        resources:
+          requests: 
+            cpu: 100m
+            memory: 64Mi
+          limits:
+            cpu: 200m
+            memory: 128Mi
+  ```
