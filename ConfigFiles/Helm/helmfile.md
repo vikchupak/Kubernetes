@@ -1,4 +1,4 @@
-`helmfile.yaml` - to deploy multiple charts at once (like compose file in for docker)
+`helmfile.yaml` - to deploy multiple charts at once (like compose file for docker)
 
 Official sources
 - https://github.com/helmfile/helmfile
