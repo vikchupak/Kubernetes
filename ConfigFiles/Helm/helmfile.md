@@ -20,15 +20,17 @@ mkdir helmfile_0.169.2_linux_amd64
 tar -xzvf helmfile_0.169.2_linux_amd64.tar.gz -C ./helmfile_0.169.2_linux_amd64
 ```
 
-3. Move binary to `/usr/bin/` or `/usr/local/bin/`
+3. Move binary to `/usr/local/bin/` or `/usr/bin/`
+   - `/usr/bin/` - system-wide, for binaries installed by the system package manager
+   - `/usr/local/bin/` - system-wide, for binaries manually installed by the system administrator
 ```bash
 # it is important to move in order not to create soft/hard links to system-wide binary
-sudo mv helmfile /usr/bin/
+sudo mv helmfile /usr/local/bin/
 ```
 
 4. Check if it worked
 ```bash
 which helmfile
-ls -l /usr/bin/helmfile
+ls -l /usr/local/bin/helmfile
 helmfile --version
 ```
