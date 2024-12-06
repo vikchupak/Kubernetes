@@ -28,6 +28,8 @@ tar -xzvf helmfile_0.169.2_linux_amd64.tar.gz -C ./helmfile_0.169.2_linux_amd64
 sudo mv helmfile /usr/local/bin/
 ```
 
+***Note: desired file permissions 755 (rwxr-xr-x)***
+
 4. Check if it worked
 ```bash
 which helmfile
