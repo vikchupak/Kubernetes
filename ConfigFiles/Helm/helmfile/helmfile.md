@@ -38,3 +38,21 @@ which helmfile
 ls -l /usr/local/bin/helmfile
 helmfile --version
 ```
+
+## Apply helmfile
+
+Apply helmfile
+```bash
+# When in helmfile.yaml file folder
+helmfile sync
+```
+
+List helmfile releases managed by helmfile
+```bash
+helmfile list
+```
+
+Remove all helmfile resources
+```bash
+helmfile destroy
+```
