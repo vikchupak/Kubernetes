@@ -5,6 +5,8 @@
 
 ***All helm commands are run against current kubectl context***
 
+https://helm.sh/docs/intro/install/
+
 ```bash
 sudo snap install helm --classic
 ```
