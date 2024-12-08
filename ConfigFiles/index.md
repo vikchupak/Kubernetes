@@ -55,7 +55,7 @@ spec:
 - A Service selects a group of Pods to which it routes traffic.
 - The `spec.selector` in a Service defines which Pods it targets by their labels.
 
-<img width="727" alt="30" src="https://github.com/user-attachments/assets/ec6dfab1-2008-4294-95ae-fcc1868cc30d">
+<img width="727" alt="30" src="https://github.com/user-attachments/assets/6b196795-675b-4fd6-b4ef-41af06db1077">
 
 ```yaml
 apiVersion: v1
