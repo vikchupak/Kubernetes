@@ -51,12 +51,19 @@ ingress:
   path: /
 ```
 
+## Values priority application
+
+The next overwrites the privious
+- Values used from default `values.yaml` file
+- Values used from `-f custom-values-file.yaml` file
+- Values used from `--set key1=value1` option
+
 ## Commands
 
 Preview templetified manifests
 ```bash
 # when in the same folder as `chart-name`
-helm template -f values-file.yaml chart-name
+helm template -f values-file.yaml chart-name --set key1=value1,key2=value2
 ```
 
 Validate template files
