@@ -71,6 +71,12 @@ Validate template files
 helm lint -f values-file.yaml chart-name
 ```
 
+Validate template files 2
+```bash
+# Sends files to k8s, but withot deploying
+helm install --dry-run -f values-file.yaml helm-release-name chart-name
+```
+
 Create/deploy resources in k8s via helm
 ```bash
 helm install -f values-file.yaml helm-release-name chart-name
