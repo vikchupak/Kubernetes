@@ -1,3 +1,5 @@
+- https://gitlab.com/twn-devops-bootcamp/latest/10-kubernetes/helm-chart-microservices/-/blob/main/helmfile.yaml?ref_type=heads
+
 `helmfile.yaml` - to deploy multiple charts at once (like compose file for docker)
 
 Official sources
