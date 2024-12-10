@@ -1,6 +1,6 @@
 # Kubernetes
 
-**Container orchestration** tool(system). Helps to **manage** containerized applications.
+**Container orchestration** tool(system). Helps to **manage** containerized applications like scaling, deploing, restarting. **Without it we would have to track and handle all this yourself manually.**
 
 Uses container runtime like docker `containerd` on each node, NOT whole docker.\
 See node in https://github.com/VIK2395/Kubernetes/blob/main/components/index.md
