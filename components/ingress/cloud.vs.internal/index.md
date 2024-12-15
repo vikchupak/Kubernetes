@@ -4,7 +4,7 @@ External (Cloud) Load Balancer vs Internal Reverse Proxy
 - https://aws.amazon.com/blogs/containers/exposing-kubernetes-applications-part-1-service-and-ingress-resources/
 ---
 - External Load Balancer (`AWS Load Balancer Controller` as Ingress controller) [cloud managed service]
-  - Helps to manage `AWS Elastic Load Balancers` (ELBs) for Kubernetes
+  - **Helps to manage `AWS Elastic Load Balancers` (ELBs) for Kubernetes**
   - It integrates with the Kubernetes API to provision and manage Application Load Balancers (ALBs) and Network Load Balancers (NLBs) for services within a Kubernetes cluster
   - The AWS Load Balancer Controller acts as the Ingress controller for AWS
   - When you create a Kubernetes Ingress resource, the AWS Load Balancer Controller automatically provisions an ALB or NLB to handle traffic based on the Ingress rules.
