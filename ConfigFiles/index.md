@@ -85,7 +85,7 @@ spec:
 
 We can put multiple documents to the same yaml file.
 
-Usually, deployment and service are put into the same file because they usually belong together.
+**Usually, deployment and service are put into the same file because they usually belong together.**
 
 We can execute the file, and `kubectl` will create/update all the components described in the file.
 
