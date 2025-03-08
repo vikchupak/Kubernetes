@@ -117,7 +117,7 @@
     - **Monitoring**
     - **Network Plugins**
 
-## Nodes autoscaling
+## Nodes and pods autoscaling
 
 - https://github.com/vikchupak/Kubernetes/blob/main/managedAndUnmanagedCluster/autoscaling.md#nodes-autoscaling
 
