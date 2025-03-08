@@ -81,11 +81,17 @@
     - Storage on local machine (Node)
     - Remote storage outside k8s cluster (cloud storage or on-promises storage)
 
-- **Deploment**. [Replication]. A bluprint for pods. A Deployment is a higher-level abstraction that builds on top of **ReplicaSet**.
+- **Deploment**. [Replication]. A bluprint for pods. A Deployment is a **higher-level abstraction** that builds on top of **ReplicaSet**.
   - Abstraction on top of pods
   - For **StateLESS** apps
   - Sets number of pod replicas
   - In practice, we don't work with Pods(though we can), but with deployments as it is more convenient way to deal with Pods.
+
+- **ReplicaSet**. [Replication]
+  - Manages a specified number of identical Pods are running at any given time
+  - For **StateLESS** apps
+  - Automatically replaces failed or terminated pods
+  - Uses label selectors to manage pods
  
 - **StatefulSet**. [Replication]. The same as Deployment, but for **StateFUL** apps
   - Abstraction on top of pods
