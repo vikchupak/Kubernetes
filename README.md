@@ -13,6 +13,6 @@ See node in https://github.com/VIK2395/Kubernetes/blob/main/components/index.md
 
 # Ingress and egress
 
-- In general. **The process of entering or incoming traffic**. This is often used to describe network traffic entering a system, network, or application. From Latin, "ingressus" means "to enter" or "entry." 
+- Ingress. In general. **The process of entering or incoming traffic**. This is often used to describe network traffic entering a system, network, or application. From Latin, "ingressus" means "to enter" or "entry." 
 
-- In general. **The process or act of leaving or sending data out of a system, network, or application**. It is the opposite of ingress. From Latin, "egressus," meaning "to exit" or "outgoing."
+- Egress. In general. **The process or act of leaving or sending data out of a system, network, or application**. It is the opposite of ingress. From Latin, "egressus," meaning "to exit" or "outgoing."
