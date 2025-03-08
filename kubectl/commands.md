@@ -44,10 +44,18 @@ kubectl apply -f <fileName>
 kubectl delete -f <fileName>
 ```
 ## Debugging
+
 ```bash
-# Logs inside pod
+# By default, kubectl logs <podName> will only show logs from the first container inside the pod (if there are multiple containers).
 kubectl logs <podName>
+
+# To see logs from all containers in the pod at once, use the --all-containers flag
+kubectl logs <podName> --all-containers=true
+
+# If your pod has multiple containers, you need to specify which container's logs you want to see
+kubectl logs <podName> -c <containerName>
 ```
+
 ```bash
 # Detailed info on a component
 kubectl describe node|pod|service|replicaSet|deployment <componentName>
