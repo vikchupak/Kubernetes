@@ -1,6 +1,6 @@
 # Deployment vs StatefulSet
 
-## Deployment
+### Deployment
 - Used for stateless applications
 - **Replica pods are indentical and interchangeable**
 - Each pod gets random hash
@@ -8,7 +8,7 @@
 - 1 service that load balances to any pod
 - Pods do not get their own DNS names
 
-## StatefulSet
+### StatefulSet
 - Used for stateful applications
 - **Replica pods are NOT identical and NOT interchangeable**
 - Each pod gets unique sticky persistent `Pod Identifier` (as name part) [and thus state] on top of the common bluprint of the pod.
