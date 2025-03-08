@@ -87,7 +87,7 @@
   - Sets number of pod replicas
   - In practice, we don't work with Pods(though we can), but with deployments as it is more convenient way to deal with Pods.
 
-- **ReplicaSet**. [Replication]
+- **ReplicaSet**. [Replication]. Usually, we do not work with ReplicaSet directly, but with Deploment
   - Manages a specified number of identical Pods are running at any given time
   - For **StateLESS** apps
   - Automatically replaces failed or terminated pods
