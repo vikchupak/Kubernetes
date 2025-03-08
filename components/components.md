@@ -121,7 +121,7 @@
 
 - https://github.com/vikchupak/Kubernetes/blob/main/managedAndUnmanagedCluster/autoscaling.md#nodes-autoscaling
 
-## Pods replication
+## Pods replication (distribution across nodes)
 
 In Kubernetes, **nodes do not have replicas** in the same way that Pods or Deployments do. The concept of **replicas** applies primarily to **Pods** or other resources that run workloads, not to nodes themselves.
 
