@@ -19,6 +19,8 @@ kubectl get deployment -o yaml [> nginx-deployment-status.yaml]
 ```bash
 # THERE ARE NO SUCH COMMAND [with pod] because usually we do not create pods directly
 kubectl create pod
+# Output
+# error: Unexpected args: [pod]
 ```
 ```bash
 # Create deployment via terminal
