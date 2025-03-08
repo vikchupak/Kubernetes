@@ -7,7 +7,7 @@ export KUBECONFIG=/path/to/your/kubeconfig
 ```
 
 ```bash
-kubectl get all|nodes|pods|services|replicaSet|deployment|secret|endpoints [-o wide]
+kubectl get all|nodes|pods|services|replicaSet|deployment|secret|endpoints|ingress [-o wide]
 # -o wide - for more detailed info
 # all - shows common resource types such as Pods, Deployments, Services, ReplicaSets, and StatefulSets, but not Secrets, ConfigMaps, or other non-pod-related resources
 ```
