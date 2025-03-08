@@ -40,8 +40,80 @@ minikube addons enable ingress
 ```bash
 # For Ingress
 minikube tunnel
+# To see assigned port
+kubectl get service <service-name>
 ```
 ```bash
-# For LoadBalancer service
-minikube service <service-name>
+# For LoadBalancer, NodePort services
+minikube service <service-name> --url
+# Outputs service access url with assigned port
 ```
+
+## `minikube tunnel` vs `minikube service <service-name>`
+
+Both commands are used to expose services in Minikube, but they work differently.  
+
+---
+
+## **🔹 `minikube tunnel`**
+✅ **Creates a network tunnel** to expose **LoadBalancer** services on your local machine.  
+✅ Requires **root (sudo) privileges** because it modifies the system routes.  
+✅ Runs **persistently** in the terminal until manually stopped (`Ctrl + C`).  
+✅ Works with **LoadBalancer services only** (not NodePort).  
+
+### **Example Usage:**
+```sh
+minikube tunnel
+```
+- This exposes **all LoadBalancer services** in your Minikube cluster.  
+- You need to open a separate terminal to run other commands while it is running.  
+
+### **When to Use?**
+- When your service is of **type: LoadBalancer** and you need to expose it on your local machine.  
+- Example service definition:
+  ```yaml
+  apiVersion: v1
+  kind: Service
+  metadata:
+    name: my-service
+  spec:
+    type: LoadBalancer
+    ports:
+      - port: 80
+        targetPort: 8080
+    selector:
+      app: my-app
+  ```
+
+---
+
+## **🔹 `minikube service <service-name>`**
+✅ **Finds and exposes a service** running in Minikube.  
+✅ Works with **NodePort and LoadBalancer services**.  
+✅ Automatically **opens a browser** (unless `--url` is used).  
+✅ Runs in the foreground, but can be closed manually.  
+
+### **Example Usage:**
+```sh
+minikube service mongo-express-service --url
+```
+
+---
+
+## **🔹 Key Differences**
+| Feature               | `minikube tunnel` | `minikube service <service-name>` |
+|----------------------|----------------|--------------------------|
+| Works with **LoadBalancer** | ✅ Yes | ✅ Yes |
+| Works with **NodePort** | ❌ No | ✅ Yes |
+| Requires **root/sudo** | ✅ Yes | ❌ No |
+| Opens in a browser | ❌ No | ✅ Yes (unless `--url` is used) |
+| Exposes **all LoadBalancer services** | ✅ Yes | ❌ No (only one service) |
+| Runs **persistently** | ✅ Yes | ❌ No (stops when closed) |
+
+---
+
+## **❓ Which One Should You Use?**
+- If your service is **NodePort**, use `minikube service <service-name>`.  
+- If your service is **LoadBalancer**, use **either**:
+  - `minikube tunnel` (for all LoadBalancer services)  
+  - `minikube service <service-name>` (for a single service)  
