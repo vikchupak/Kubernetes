@@ -1,4 +1,4 @@
-Kubectl - Kubernetes command line tool for communicating with a Kubernetes cluster's control plane, using the Kubernetes API.
+Kubectl - Kubernetes native command line tool for communicating with a Kubernetes cluster's control plane(API server), using the Kubernetes API.
 
 ```bash
 # Connect to remote cluster with kubectl
