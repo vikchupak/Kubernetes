@@ -5,8 +5,8 @@ Kubernetes does not provide **node autoscaling out-of-the-box** by itself.
 ### Kubernetes and Node Autoscaling
 
 1. **Kubernetes Native Autoscaling Features:**
-   - **Pod Autoscaling:** Kubernetes natively supports **Horizontal Pod Autoscaler (HPA)** and **Vertical Pod Autoscaler (VPA)** to scale the number of pods or their resource usage.
-   - **Cluster Autoscaler:** This is a separate component provided by Kubernetes but **not part of the default installation**. It works to scale the number of nodes by interacting with your infrastructure layer.
+   - **Pod Autoscaling:** Kubernetes natively supports **Horizontal Pod Autoscaler (HPA)** and **Vertical Pod Autoscaler (VPA)** to scale the number of pods or their resource usage like CPU utilization, memory usage, or custom metrics.
+   - **Cluster Autoscaler (node autoscaling):** This is a separate component provided by Kubernetes but **not part of the default installation**. It works to scale the number of nodes by interacting with your infrastructure layer.
 
 2. **Dependency on Infrastructure:**
    - Kubernetes relies on the underlying infrastructure to add or remove nodes, etc:
