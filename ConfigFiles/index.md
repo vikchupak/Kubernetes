@@ -1,3 +1,5 @@
+**Note: usually, deployment and service are put into the same file because they usually belong together.**
+
 ## Files structure
 
 Each config file has 3 parts:
