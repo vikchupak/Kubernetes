@@ -45,6 +45,8 @@ kubectl delete -f <fileName>
 ```
 ## Debugging
 
+### See logs
+
 ```bash
 # By default, kubectl logs <podName> will only show logs from the first container inside the pod (if there are multiple containers).
 kubectl logs <podName>
@@ -56,10 +58,15 @@ kubectl logs <podName> --all-containers=true
 kubectl logs <podName> -c <containerName>
 ```
 
+### See componets info
+
 ```bash
 # Detailed info on a component
 kubectl describe node|pod|service|replicaSet|deployment <componentName>
 ```
+
+### Go inside pods(containers)
+
 ```bash
 # Open pod interactive terminal
 kubectl exec -it <podName> -- bin/bash
