@@ -1,3 +1,5 @@
+# Deployment vs StatefulSet
+
 ## Deployment
 - Used for stateless applications
 - **Replica pods are indentical and interchangeable**
