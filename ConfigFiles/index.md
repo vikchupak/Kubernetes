@@ -2,7 +2,7 @@
 
 Each config file has 3 parts:
 - `metadata` of a component being created
-- `spec` (specification) - congigs to apply to that component
+- `spec` (specification) - configs to apply to that component
   - Deployment includes `template` section - it is a nested config file - blueprint for pods within the deployment - applies to pods
     - has own `metadata`
     - has own `spec`
