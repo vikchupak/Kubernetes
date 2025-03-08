@@ -88,7 +88,7 @@
   - In practice, we don't work with Pods(though we can), but with deployments as it is more convenient way to deal with Pods.
   - Layers of abstraction
     - Deployment (manages) > ReplicaSet (manages) > Pod (manages) > container
-    - So, everything below the Deployment are managed automatically by k8s 
+    - So, everything below the Deployment is managed automatically by k8s 
 
 - **ReplicaSet**. [Replication]. Usually, we do not work with ReplicaSet directly, but with Deploment
   - Manages a specified number of identical Pods are running at any given time
