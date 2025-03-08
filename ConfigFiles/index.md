@@ -8,10 +8,11 @@ Each config file has 3 parts:
   - Deployment includes `template` section - it is a nested config file - blueprint for pods within the deployment - applies to pods
     - has own `metadata`
     - has own `spec`
-    
-  ![image](https://github.com/user-attachments/assets/bf3fafc8-3b6d-40ac-bb30-94921179d66f)
 - `status` (automatically generated and added by Kubernetes). Kubernetes continuously compares `specification - desired state/status` vs `status - actual state/status` and syncs the states/statuses.
   - status data gets from `etcd`
+
+Deployment manifest
+![image](https://github.com/user-attachments/assets/aff57e49-dea9-4571-9090-bdae957879e6)
 
 ## Labels and Selectors
 
