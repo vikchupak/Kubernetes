@@ -1,4 +1,6 @@
 ### Mounting as Volumes
+ConfigMap and Secret can be mounted directly as volumes, but without PV(persistent volume) and PVC(persistent volume claim) unlike other volumes
+
 When you mount a ConfigMap or Secret as a volume:
 1. You define it in the `volumes` section of a pod's specification.
 2. You specify how and where to mount it in the container.
