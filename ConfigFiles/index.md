@@ -87,7 +87,7 @@ spec:
 - ***All container ports are open on pod ports 1:1***
 - Spesifying containerPort in pod definition is optional, but good practice for doc/overview purposes
 - Example with LoadBalancer/NodePort service type which includes nodePort
-  - https://gitlab.com/devopsbootcamp8550504/10-kubernetes/mongodbink8s/-/blob/main/mongo-express-deployment.yaml?ref_type=heads#L60
+  - https://gitlab.com/devopsbootcamp8550504/10-kubernetes/mongodbink8s/-/blob/main/mongo-express-deployment.yaml?ref_type=heads#L58
 
 *****
 
