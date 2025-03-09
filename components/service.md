@@ -86,7 +86,9 @@ So, there are different ways to setup cluster
    - This would mean that the external load balancer would have to route trafic using IP based routing using `node-ip:node-port`
        - Cloud providers manage this under the hood
 
-See https://www.eksworkshop.com/docs/fundamentals/exposing/aws-lb-controller
+See 
+- https://github.com/vikchupak/Kubernetes/blob/main/components/ingress/cloud.vs.internal/index.md
+- https://www.eksworkshop.com/docs/fundamentals/exposing/aws-lb-controller
 
 - ALB works at 7 OSI layer **(Host based routing)**
 - NLB works at 4 OSI layer **(IP based routing)**
