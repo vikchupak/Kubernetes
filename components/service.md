@@ -77,7 +77,13 @@ No, the Kubernetes **LoadBalancer service is just an API object**—the actual t
 
 ## LoadBalancer vs Ingress
 
-To describe
+So, there are different ways to setup cluster
+1. Using cloud load balancer without ingress
+2. Using cloud load balancer with ingress
+3. Mix cloud load balancer with ingress so part of trafic to go via ingress, part directly via cloud load balancer
+---   
+4. On-promises with ingress and setting external load balancer(reverse proxy)
+5. On-promises without ingress setting external load balancer. (Very difficalt and not efficient way)
 
 ## Config files
 
