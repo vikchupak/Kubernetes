@@ -57,6 +57,7 @@ metadata:
   name: example-ingress
 spec:
   rules:
+    # - host: dashboard.com # Add to use hostname for routing. Without this, 127.0.0.1 will work
     - http:
         paths:
           - pathType: Prefix
