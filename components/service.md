@@ -21,7 +21,9 @@
     - or `minikube service <service-name>` > see logs or `kubectl get services <service-name>` > EXTERNAL-IP
   - Each service with type LoadBalancer gets its own external load balancer.
   - The external load balancer forwards traffic to the NodePort on the nodes.
-  - When LoadBalancer service created, it also creates NodePort services and routes trafic from the LoadBalancer to the NodePort services.  ("Wraps" NodePort)
+  - **When LoadBalancer service created, it also creates NodePort services and routes trafic from the LoadBalancer to the NodePort services.  ("Wraps" NodePort)**
+    - So the flow is
+      - LoadBalacerIP + LoadBalancerPort > NodePortIPs + NodePorts > ClusterIP + ClusterIPPort?
 
 - Headless
   - Doesn't have own static/stable service IP. Returns the service's pod IPs instead.
