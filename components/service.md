@@ -75,6 +75,10 @@ No, the Kubernetes **LoadBalancer service is just an API object**—the actual t
 - On on-premises (self-hosted Kubernetes), where there is no cloud provider, the LoadBalancer service does not automatically provision an external load balancer.
 - But, you can configure a traditional load balancer like NGINX to forward traffic to the Kubernetes NodePort service
 
+## LoadBalancer vs Ingress
+
+To describe
+
 ## Config files
 
 - Internal service. It also acts as a load-balancer despite the name.
