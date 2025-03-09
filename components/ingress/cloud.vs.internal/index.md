@@ -24,5 +24,5 @@ In some cases, you might want both:
 
 - https://aws.amazon.com/blogs/opensource/network-load-balancer-nginx-ingress-controller-eks/
 
-- ALB works at 7 OSI layer
-- NLB works at 4 OSI layer
+- ALB works at 7 OSI layer **(Host based routing)**
+- NLB works at 4 OSI layer **(IP based routing)**
