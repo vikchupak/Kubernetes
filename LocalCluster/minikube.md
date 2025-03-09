@@ -38,15 +38,15 @@ minikube addons enable ingress
 - https://minikube.sigs.k8s.io/docs/handbook/accessing/
 - https://minikube.sigs.k8s.io/docs/commands/tunnel/
 ```bash
-# For Ingress
+# For LoadBalancer services only
 minikube tunnel
-# To see assigned port
+# To see assigned ip:port
 kubectl get service <service-name>
 ```
 ```bash
 # For LoadBalancer, NodePort services
 minikube service <service-name> --url
-# Outputs service access url with assigned port
+# Outputs service access url with assigned ip:port
 ```
 
 ## `minikube tunnel` vs `minikube service <service-name>`
