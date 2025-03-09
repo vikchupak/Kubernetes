@@ -90,6 +90,8 @@ See
 - https://github.com/vikchupak/Kubernetes/blob/main/components/ingress/cloud.vs.internal/index.md
 - https://www.eksworkshop.com/docs/fundamentals/exposing/aws-lb-controller
 
+---
+
 - ALB works at 7 OSI layer **(Host based routing)**
 - NLB works at 4 OSI layer **(IP based routing)**
 
