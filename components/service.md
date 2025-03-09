@@ -9,7 +9,7 @@
   - `http://<any-node-ip>:<node-port>`; See LoadBalancer. Exactly the same setting.
     ![image](https://github.com/user-attachments/assets/8c4fcbf8-611e-4ddd-86c3-786d17ad449b)
   - **A service spans accross all nodes**
-  - When NodePort service created, it also creates ClusterIP services and routes trafic from the NodePort to the ClusterIP services. ("Wraps" ClusterIP)
+  - **When NodePort service created, it also creates ClusterIP services and routes trafic from the NodePort to the ClusterIP services. ("Wraps" ClusterIP)**
   - A NodePort provides a simple way to access a service **during development or debugging** without needing a more complex setup like Ingress or LoadBalancer.
 
 - LoadBalancer
@@ -23,7 +23,10 @@
   - The external load balancer forwards traffic to the NodePort on the nodes.
   - **When LoadBalancer service created, it also creates NodePort services and routes trafic from the LoadBalancer to the NodePort services.  ("Wraps" NodePort)**
     - So the flow is
-      - LoadBalacerIP + LoadBalancerPort > NodePortIPs + NodePorts > ClusterIP + ClusterIPPort?
+      1. External request → LoadBalancer (External IP)
+      2. LoadBalancer → NodePort (<NodeIP>:32000)
+      3. NodePort → ClusterIP (10.96.0.1)
+      4. ClusterIP → Pod IP (e.g., 10.244.1.2)
 
 - Headless
   - Doesn't have own static/stable service IP. Returns the service's pod IPs instead.
