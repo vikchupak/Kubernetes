@@ -26,6 +26,7 @@
 - Headless
   - Doesn't have own static/stable service IP. Returns the service's pod IPs instead.
   - `spec.clusterIP: None` to make a service Headless. `It is still ClusterIP type`.
+  - Usefull for stateful apps.
 
 ## Config files
 
