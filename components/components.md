@@ -33,6 +33,7 @@
 
 - **Service**. **Wrapper or abstraction layer** over a **group of the same Pods** [Communucation between services/pods]
   - A service has **static/permanent IP and DNS**
+  - **A service spans multiple nodes**
   - Lifecycle of Pod and Service are **NOT connected**. So pods can be re-created, but the service still persists.
   - **Load Balancing**. The Service balances traffic across the group of Pods it represents, ensuring that requests are distributed evenly.
   - **Service/Label Selector**. Services often use labels and selectors to match a set of Pods (e.g., all Pods with the label `app=web`). By using label selectors, the Service can dynamically associate with any Pods that match the defined labels. If a Pod fails and a new one replaces it with the same labels, the Service automatically includes it.
