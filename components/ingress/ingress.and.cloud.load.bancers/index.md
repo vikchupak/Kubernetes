@@ -20,7 +20,7 @@ AWS offers multiple types of load balancers with distinct features:
 
 - Application Load Balancer (ALB): Works at the HTTP/HTTPS layer (Layer 7) and supports features like host/path-based routing.
 - Network Load Balancer (NLB): Works at the TCP layer (Layer 4), ideal for high-performance, low-latency traffic.
-- Ingress Controller Is Optional
+- **Ingress Controller Is Optional**
    - AWS provides Application Load Balancer (ALB), which can directly interpret Kubernetes Ingress resources. This means:
     You don’t need to deploy an Ingress Controller (like NGINX or Traefik) because ALB acts as the Ingress Controller.
   ALB supports advanced Layer 7 features such as host/path-based routing and SSL termination.
