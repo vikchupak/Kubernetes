@@ -82,9 +82,14 @@ So, there are different ways to setup cluster
 2. Using cloud load balancer with ingress
 ---   
 3. On-promises with ingress and setting external load balancer(reverse proxy)
-4. On-promises without ingress setting external load balancer. (Very difficalt and not efficient way)
+4. On-promises without ingress setting external load balancer. (Very difficult for big production projects and not efficient way)
+   - This would mean that the external load balancer would have to route trafic using IP based routing using `node-ip:node-port`
+       - Cloud providers manage this under the hood
 
 See https://www.eksworkshop.com/docs/fundamentals/exposing/aws-lb-controller
+
+- ALB works at 7 OSI layer **(Host based routing)**
+- NLB works at 4 OSI layer **(IP based routing)**
 
 ## Config files
 
