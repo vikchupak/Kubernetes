@@ -70,6 +70,11 @@ No, the Kubernetes **LoadBalancer service is just an API object**—the actual t
 2. The **NodePort service** running on Kubernetes worker nodes.
 3. The **ClusterIP service**, which distributes traffic to Pods.
 
+### `on-promises load balancers`
+
+- On on-premises (self-hosted Kubernetes), where there is no cloud provider, the LoadBalancer service does not automatically provision an external load balancer.
+- But, you can configure a traditional load balancer like NGINX to forward traffic to the Kubernetes NodePort service
+
 ## Config files
 
 - Internal service. It also acts as a load-balancer despite the name.
