@@ -24,7 +24,7 @@
   - **When LoadBalancer service created, it also creates NodePort services and routes trafic from the LoadBalancer to the NodePort services.  ("Wraps" NodePort)**
     - So the flow is
       1. External request → LoadBalancer (External IP)
-      2. LoadBalancer → NodePort (<NodeIP>:32000)
+      2. LoadBalancer → NodePort (< Random-NodeIP >:32000)
       3. NodePort → ClusterIP (10.96.0.1)
       4. ClusterIP → Pod IP (e.g., 10.244.1.2)
 
