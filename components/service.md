@@ -4,7 +4,7 @@
   - Default. Acts as a load-balancer.
 
 - NodePort
-  - External via node-ip.
+  - External via node-ip + node-port.
   - `spec.ports.nodePort` to make service accessible externally.
   - `http://<any-node-ip>:<node-port>`; See LoadBalancer. Exactly the same setting.
     ![image](https://github.com/user-attachments/assets/8c4fcbf8-611e-4ddd-86c3-786d17ad449b)
