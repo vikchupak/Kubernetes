@@ -3,9 +3,10 @@
 ### kubeconfig file
 Use a `kubeconfig` file to establish a secure connection to the API server. This file is usually located at `~/.kube/config` and contains:
 
-- Cluster details (e.g., API server URL, CA certificates).
-- User credentials or tokens.
-- Example of a `kubeconfig`:
+- Cluster details (e.g., API server URL, CA certificates)
+- User credentials or tokens
+
+Example of a `kubeconfig`
   ```yaml
   apiVersion: v1
   clusters:
