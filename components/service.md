@@ -20,8 +20,6 @@
   - `http://<external-load-balancer-ip(unique)>:<node-port>` in produnction; after tunnel maps on `http://127.0.0.1:<tunnel-port>`
     - command for tunnel `minikube tunnel`; then `kubectl get services <service-name>` > EXTERNAL-IP
     - or `minikube service <service-name>` > see logs or `kubectl get services <service-name>` > EXTERNAL-IP
-  - Each service with type LoadBalancer gets its own external load balancer.
-  - The external load balancer forwards traffic to the NodePort on the nodes.
   - **When LoadBalancer service created, it also creates NodePort services and routes trafic from the LoadBalancer to the NodePort services.  ("Wraps" NodePort)**
     - So the flow is
       1. External request → LoadBalancer (External IP)
@@ -31,6 +29,7 @@
   - Each service of `type LoadBalancer` gets **its own** external load balancer that forwards traffic **only** to its service.
     - **Service A (type: LoadBalancer)** gets its own external load balancer A. Load balancer A **only forwards traffic to Service A**.
     - **Service B (type: LoadBalancer)** gets its own external load balancer B. Load balancer B **only forwards traffic to Service B**.
+  - The external load balancer forwards traffic to the NodePort on the nodes.
 
 - **Headless**
   - Doesn't have own static/stable service IP. Returns the service's pod IPs instead.
