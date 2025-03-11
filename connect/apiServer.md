@@ -1,5 +1,3 @@
-### This is NOT about minikube, but k8s
-
 # Ways to establish communication with k8a api server
 
 There are several ways to establish communication with the Kubernetes API server, depending on your use case (e.g., administrative tasks, programmatic access, or debugging). Below are the most common methods:

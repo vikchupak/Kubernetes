@@ -1,7 +1,7 @@
 Container images repository
 - https://hub.docker.com/
 
-When using minikube with the docker driver, we need to login to private container images repository from the docker inside k8s container, NOT host's docker.
+When using minikube with the docker driver, we need to login to private docker repository from the docker inside k8s container, NOT host's docker.
 
 ```bash
 minikube ssh

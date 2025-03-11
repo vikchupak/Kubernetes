@@ -1,6 +1,4 @@
-### kubectl proxy, is it not about minikube, but k8s?
-
-Yes, kubectl proxy is a Kubernetes command and is not specific to Minikube. It creates a local proxy to the Kubernetes API server, allowing you to access the Kubernetes API and services securely from your local machine. 
+kubectl proxy is a Kubernetes command and is not specific to Minikube. It creates a local proxy to the Kubernetes API server, allowing you to access the Kubernetes API and services securely from your local machine. 
 
 ---
 
