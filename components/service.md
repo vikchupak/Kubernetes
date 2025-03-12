@@ -30,6 +30,9 @@
     - **Service A (type: LoadBalancer)** gets its own external load balancer A. Load balancer A **only forwards traffic to Service A**.
     - **Service B (type: LoadBalancer)** gets its own external load balancer B. Load balancer B **only forwards traffic to Service B**.
   - The external load balancer forwards traffic to the NodePort on the nodes.
+  - Ingress-nginx-controller is deployed as LoadBalancer type, and so cloud LoadBalancer forwards traffic to the service's NodePort on the nodes
+    - https://kubernetes.github.io/ingress-nginx/deploy/
+    - https://raw.githubusercontent.com/kubernetes/ingress-nginx/controller-v1.12.0/deploy/static/provider/cloud/deploy.yaml
 
 - **Headless**
   - Doesn't have own static/stable service IP. Returns the service's pod IPs instead.
