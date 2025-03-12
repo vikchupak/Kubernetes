@@ -33,6 +33,8 @@
   - Ingress-nginx-controller is deployed as LoadBalancer type, and so cloud LoadBalancer forwards traffic to the service's NodePort on the nodes
     - https://kubernetes.github.io/ingress-nginx/deploy/
     - https://raw.githubusercontent.com/kubernetes/ingress-nginx/controller-v1.12.0/deploy/static/provider/cloud/deploy.yaml
+  - AWS Load Balancer Controller installation
+    - https://docs.aws.amazon.com/eks/latest/userguide/lbc-helm.html
 
 - **Headless**
   - Doesn't have own static/stable service IP. Returns the service's pod IPs instead.
