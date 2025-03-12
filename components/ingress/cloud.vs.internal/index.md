@@ -26,3 +26,13 @@ In some cases, you might want both:
 
 - ALB works at 7 OSI layer **(Host based routing)**
 - NLB works at 4 OSI layer **(IP based routing)**
+
+### **Comparison: ALB vs. NLB vs. CLB**
+| Feature               | ALB (Layer 7) | NLB (Layer 4) | CLB (Legacy) |
+|-----------------------|--------------|--------------|-------------|
+| Protocols            | HTTP, HTTPS  | TCP, TLS, UDP | HTTP, HTTPS, TCP |
+| Routing Type         | Path, Host, Headers | IP & Port-based | Basic |
+| SSL Termination      | Yes          | No (Pass-through) | Yes |
+| WebSockets Support   | Yes          | No          | No |
+| Sticky Sessions      | Yes (via Cookies) | Yes (via Source IP) | Yes |
+| Best For            | Web Apps, APIs | Low-latency TCP/UDP apps | Legacy apps |
