@@ -1,3 +1,5 @@
+# Exposing using an ingress-controller vs cloud load balancers directly
+
 #  Linode Kubernetes Engine (LKE)
 
 - When you create a Kubernetes Service of type `LoadBalancer`, Linode provisions a Linode's `NodeBalancer` for your cluster.
