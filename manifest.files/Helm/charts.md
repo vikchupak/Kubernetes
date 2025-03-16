@@ -21,6 +21,8 @@ All files in templates folder are passed to template engine. The engine fills th
 
 ## Values files can use flat or nested values definition
 
+***Nested definition is generally preferred***
+
 ```yaml
 appName: my-app
 imageRepository: my-app-repo
