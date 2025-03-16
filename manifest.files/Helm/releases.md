@@ -1,3 +1,5 @@
+**Release name is like deploy name in helm world.**
+
 In Helm, the commands `install`, `uninstall`, `upgrade`, and `rollback` perform different functions related to the lifecycle of a Helm release:
 
 ### 1. **`helm install`**:
