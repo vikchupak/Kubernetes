@@ -60,6 +60,25 @@ The next overwrites the privious
 - Values used from `-f custom-values-file.yaml` file
 - Values used from `--set key1=value1` option
 
+## Env variables
+
+```yaml
+# ...
+    spec:
+      containers:
+      - name: {{ .Values.appName }}
+        image: "{{ .Values.appImage }}:{{ .Values.appVersion }}"
+        ports:
+        - containerPort: {{ .Values.containerPort }}
+        env:
+        - name: {{ .Values.containerEnvVar.name }} # single env var
+          value: {{ .Values.containerEnvVar.value }}
+        {{- range .Values.containerEnvVars}} # range of env vars
+        - name: {{ .name }}
+          value: {{ .value | quote }}
+        {{- end}}
+```
+
 ## Commands
 
 Preview templetified manifests
