@@ -72,10 +72,10 @@ The next overwrites the privious
         - containerPort: {{ .Values.containerPort }}
         env:
         - name: {{ .Values.containerEnvVar.name }} # single env var
-          value: {{ .Values.containerEnvVar.value }}
+          value: {{ .Values.containerEnvVar.value | quote }} # | quote pipe to string
         {{- range .Values.containerEnvVars}} # range of env vars
         - name: {{ .name }}
-          value: {{ .value | quote }}
+          value: {{ .value | quote }} # | quote pipe to string
         {{- end}}
 ```
 
