@@ -1,6 +1,6 @@
 ## Role based access control (RBAC)
 
-- There are no User or Group resources in k8s
+- There are no User or Group **resources** in k8s
 - Users and Groups in k8s are NOT managed as native resources like pods, services, or roles. Instead, Kubernetes relies on an external identity provider or authentication mechanism.
 
 1. **External Identity**:
