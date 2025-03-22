@@ -1,5 +1,6 @@
 ### **What Are Annotations in Kubernetes?**
-Annotations are **key-value pairs** used to attach metadata to Kubernetes objects (like Pods, Services, or Ingress). Unlike labels, **annotations are not used for selection or scheduling**—they store information that Kubernetes tools and controllers can use.  
+- Annotations are **key-value pairs** used to attach metadata to Kubernetes objects (like Pods, Services, or Ingress).
+- Unlike labels, **annotations are not used for selection or scheduling**—they store information that Kubernetes tools and controllers can use.  
 
 ---
 
