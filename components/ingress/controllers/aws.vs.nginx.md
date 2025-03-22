@@ -52,6 +52,19 @@
 
 ![image](https://github.com/user-attachments/assets/06f070ce-c2b7-42e8-a5fa-aa49c73af81d)
 
+## `AWS Load Balancer Controller` vs `Ingress-Nginx Controller` deploment
+
+**AWS Load Balancer Controller is deployed as a Kubernetes Deployment, not a Service** like the **Ingress-Nginx Controller**.  
+
+### **Key Differences Between AWS Load Balancer Controller & Ingress-Nginx Controller**
+| Feature | AWS Load Balancer Controller | Ingress-Nginx Controller |
+|---------|-----------------------------|-------------------------|
+| **Type** | **Controller (Deployment)** | **Ingress Controller (Deployment + Service)** |
+| **Creates Kubernetes Service?** | ❌ No (It only manages AWS ALBs/NLBs) | ✅ Yes (Exposes itself as a Service) |
+| **Traffic Handling** | Delegates traffic to ALB/NLB | Handles traffic directly |
+| **Works with** | AWS ALB & NLB | Internal Kubernetes networking |
+| **How traffic flows** | ALB/NLB → Pod (Direct) | Ingress-Nginx Pod → Pod |
+
 ## `Ingress-Nginx Controller` on-promises/bare-metal
 
 - https://kubernetes.github.io/ingress-nginx/deploy/baremetal/
