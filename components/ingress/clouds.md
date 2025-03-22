@@ -1,5 +1,3 @@
-# Exposing using an ingress-controller vs cloud load balancers directly
-
 #  Linode Kubernetes Engine (LKE)
 
 - When you create a Kubernetes Service of type `LoadBalancer`, Linode provisions a Linode's `NodeBalancer` for your cluster.
@@ -14,7 +12,7 @@
 ![image](https://github.com/user-attachments/assets/4be2908a-1bb8-4332-b2e1-81bfc13abc99)
 ![image](https://github.com/user-attachments/assets/15ee293d-79c9-4dbd-b1de-6f3e8d493c0c)
 
-# AWS Elastic Load Balancing (ELB)
+# Amazon Elastic Kubernetes Service (EKS)
 
 AWS offers multiple types of load balancers with distinct features:
 
