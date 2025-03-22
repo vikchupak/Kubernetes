@@ -18,7 +18,7 @@ External (Cloud) Load Balancer vs Internal Reverse Proxy
 ### Use Both Controllers Together
 In some cases, you might want both:
 - Use `AWS Load Balancer Controller` for external traffic and expose services to the internet.
-- Use `NGINX Ingress Controller` for internal routing or more advanced traffic management within the cluster.
+- Use `NGINX Ingress Controller` for **internal(because deployed inside cluster)** routing or more advanced traffic management within the cluster.
 
 ## Application Load Balancer (ALB) vs Network Load Balancer (NLB)
 
