@@ -27,8 +27,27 @@ Example of a `kubeconfig`
       token: <authentication-token>
   ```
 
+# Set kubeconfig file location for a session
+
 ```bash
 # Connect to remote cluster with kubectl
-export KUBECONFIG=/path/to/your/kubeconfig
 # By default, kubectl looks for the Kubeconfig file at ~/.kube/config
+export KUBECONFIG=/path/to/your/kubeconfig
+```
+
+# Switch between contexts inside kubeconfig file
+
+List contexts
+```bash
+kubectl config get-contexts
+```
+
+Show current ctx
+```bash
+kubectl config current-context
+```
+
+Switch context
+```bash
+kubectl config use-context <context-name>
 ```
