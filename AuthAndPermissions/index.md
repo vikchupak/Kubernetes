@@ -97,3 +97,82 @@ Check permissions
 ```bash
 kubectl auth can-i create deployments --namespace dev
 ```
+
+# Summary
+
+- ServiceAccount → An identity assigned to Pods (like a user for Pods).
+- Role → Defines permissions (what actions can be performed on Kubernetes resources).
+- RoleBinding → Grants a Role to a ServiceAccount.
+- Pod → assunmes ServiceAccount.
+
+### **1️⃣ Define a ServiceAccount**
+```yaml
+apiVersion: v1
+kind: ServiceAccount
+metadata:
+  name: my-service-account
+  namespace: default
+```
+- This is a Kubernetes identity that a **Pod** can use.
+
+---
+
+### **2️⃣ Define a Role (Permissions for Kubernetes Resources)**
+```yaml
+apiVersion: rbac.authorization.k8s.io/v1
+kind: Role
+metadata:
+  name: pod-reader
+  namespace: default
+rules:
+  - apiGroups: [""]
+    resources: ["pods"]
+    verbs: ["get", "list"]
+```
+- This **Role** allows reading Pods.
+
+---
+
+### **3️⃣ Bind the Role to the ServiceAccount**
+```yaml
+apiVersion: rbac.authorization.k8s.io/v1
+kind: RoleBinding
+metadata:
+  name: pod-reader-binding
+  namespace: default
+subjects:
+  - kind: ServiceAccount
+    name: my-service-account
+    namespace: default
+roleRef:
+  kind: Role
+  name: pod-reader
+  apiGroup: rbac.authorization.k8s.io
+```
+- This **RoleBinding** assigns the **Role (pod-reader)** to the **ServiceAccount (my-service-account)**.
+
+---
+
+### **4️⃣ Deploy a Pod Using This ServiceAccount**
+```yaml
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: my-app
+  namespace: default
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: my-app
+  template:
+    metadata:
+      labels:
+        app: my-app
+    spec:
+      serviceAccountName: my-service-account  # 👈 Pod uses this ServiceAccount
+      containers:
+        - name: app
+          image: nginx
+```
+- The **Deployment** creates a **Pod**, and the Pod assumes `my-service-account`.
